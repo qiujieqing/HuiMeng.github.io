@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -419,21 +418,47 @@
             </div>
         </section>
 
-        <!-- 副本挑战 -->
-        <section id="fuwen" class="section">
-            <h2>· 副本挑战 ·</h2>
-            <div class="card">
-                <p>难度：普通 → 困难 → 极限 → 传奇 → 归墟｜奖励随难度提升</p>
+       <!-- 副本挑战模块 -->
+<section class="dungeon-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>副本挑战</h2>
+        </div>
+        <div class="difficulty-info">
+            <p>难度：<span class="difficulty-text">普通 → 困难 → 极限 → 传奇 → 归墟</span></p>
+            <p>奖励随难度提升</p>
+        </div>
+
+        <!-- 副本列表 -->
+        <div class="dungeon-list">
+            <!-- 副本项 1 -->
+            <div class="dungeon-item">
+                <div class="dungeon-name">深海沉墟 / 变异村庄</div>
+                <div class="dungeon-difficulty difficulty-normal">普通</div>
             </div>
-            <table>
-                <tr><th>副本名称</th><th>难度</th></tr>
-                <tr><td>深海沉墟 / 变异村庄</td><td class="difficulty-normal">普通</td></tr>
-                <tr><td>实验基地 / 熔火炼狱</td><td class="difficulty-hard">困难</td></tr>
-                <tr><td>冰河时代 / 时序回廊</td><td class="difficulty-extreme">极限</td></tr>
-                <tr><td>幽灵骑士 / 罪域囚笼</td><td class="difficulty-legend">传奇</td></tr>
-                <tr><td>暗影主宰</td><td class="difficulty-apocalypse">归墟</td></tr>
-            </table>
-        </section>
+            <!-- 副本项 2 -->
+            <div class="dungeon-item">
+                <div class="dungeon-name">实验基地 / 熔火炼狱</div>
+                <div class="dungeon-difficulty difficulty-hard">困难</div>
+            </div>
+            <!-- 副本项 3 -->
+            <div class="dungeon-item">
+                <div class="dungeon-name">冰河时代 / 时序回廊</div>
+                <div class="dungeon-difficulty difficulty-extreme">极限</div>
+            </div>
+            <!-- 副本项 4 -->
+            <div class="dungeon-item">
+                <div class="dungeon-name">幽灵骑士 / 罪域囚笼</div>
+                <div class="dungeon-difficulty difficulty-legend">传奇</div>
+            </div>
+            <!-- 副本项 5 -->
+            <div class="dungeon-item">
+                <div class="dungeon-name">暗影主宰</div>
+                <div class="dungeon-difficulty difficulty-final">归墟</div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- 技能商店 -->
         <section id="skill" class="section">
