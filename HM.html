@@ -419,21 +419,98 @@
             </div>
         </section>
 
-        <!-- 副本挑战 -->
-        <section id="fuwen" class="section">
-            <h2>· 副本挑战 ·</h2>
-            <div class="card">
-                <p>难度：普通 → 困难 → 极限 → 传奇 → 归墟｜奖励随难度提升</p>
-            </div>
-            <table>
-                <tr><th>副本名称</th><th>难度</th></tr>
-                <tr><td>深海沉墟 / 变异村庄</td><td class="difficulty-normal">普通</td></tr>
-                <tr><td>实验基地 / 熔火炼狱</td><td class="difficulty-hard">困难</td></tr>
-                <tr><td>冰河时代 / 时序回廊</td><td class="difficulty-extreme">极限</td></tr>
-                <tr><td>幽灵骑士 / 罪域囚笼</td><td class="difficulty-legend">传奇</td></tr>
-                <tr><td>暗影主宰</td><td class="difficulty-apocalypse">归墟</td></tr>
-            </table>
-        </section>
+       <!-- 副本挑战 -->
+<section id="fuwen" class="section">
+    <h2>· 副本挑战 ·</h2>
+    <div class="card">
+        <p>难度：普通 → 困难 → 极限 → 传奇 → 归墟｜奖励随难度提升</p></div>
+    <div class="dungeon-grid">
+        <div class="dungeon-card difficulty-normal">
+            <div class="dungeon-name">深海沉墟 / 变异村庄</div>
+            <div class="dungeon-level">普通</div>
+        </div>
+        <div class="dungeon-card difficulty-hard">
+            <div class="dungeon-name">实验基地 / 熔火炼狱</div>
+            <div class="dungeon-level">困难</div>
+        </div>
+        <div class="dungeon-card difficulty-extreme">
+            <div class="dungeon-name">冰河时代 / 时序回廊</div>
+            <div class="dungeon-level">极限</div>
+        </div>
+        <div class="dungeon-card difficulty-legend">
+            <div class="dungeon-name">幽灵骑士 / 罪域囚笼</div>
+            <div class="dungeon-level">传奇</div>
+        </div>
+        <div class="dungeon-card difficulty-apocalypse">
+            <div class="dungeon-name">暗影主宰</div>
+            <div class="dungeon-level">归墟</div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* === 副本挑战专属样式 === */
+.dungeon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.7rem;
+}
+
+.dungeon-card {
+    background: rgba(30, 35, 45, 0.7);
+    border-radius: 8px;
+    padding: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dungeon-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.dungeon-name {
+    font-weight: bold;
+    color: #e0f0ff;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+}
+
+.dungeon-level {
+    font-weight: bold;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+}
+
+/* 沿用原有难度颜色 */
+.dungeon-card.difficulty-normal { border-left-color: #4CAF50; }
+.dungeon-card.difficulty-hard   { border-left-color: #FF9800; }
+.dungeon-card.difficulty-extreme{ border-left-color: #F44336; }
+.dungeon-card.difficulty-legend { border-left-color: #9C27B0; }
+.dungeon-card.difficulty-apocalypse { border-left-color: #FF5722; }
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .dungeon-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .dungeon-name {
+        max-width: 120px;
+        font-size: 12.5px;
+    }
+}
+</style>
 
         <!-- 技能商店 -->
         <section id="skill" class="section">
