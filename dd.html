@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="robots" content="all">
+  <meta name="author" content="Tencent-CP" />
+  <meta name="Description" content="《王者万象棋》是《王者荣耀》IP英雄策略对战游戏。欢迎来到万象大赛的现场，超高人气的英雄卡牌竞技秀火热进行中！你将同众多棋手一起，在这个舞台上一决高下。数不胜数的卡牌带来了无限的可能性，运用你的智慧、勇气，还有必不可少的一点点运气，去赢得比赛，成为王者，夺下冠军的荣耀吧！这一次没你不行！" />
+  <meta name="Keywords" content="王者万象棋官网,王者下棋官网,王者自走棋官网,王者万象棋,万象棋,王者下棋,王者棋,王者IP新游,王者自走棋,自走棋,王者下棋手游,王者IP手游,王者万象棋手游,王者万象棋电脑版,王者新游电脑版,王者自走棋电脑版,王者万象棋预约,王者IP新游预约,万象棋预约,王者自走棋预约,王者万象棋内测,万象棋内测,王者IP新游内测,王者万象棋测试资格,万象棋测试资格,王者IP新游测试,王者万象棋安装,万象棋安装,王者下棋安装,王者自走棋安装,王者新游安装,王者万象棋下载,万象棋下载,王者下棋下载,王者自走棋下载,王者新游下载" />
+  <meta name="Copyright" content="Tencent" />
+  <link rel="icon" href="//game.gtimg.cn/images/osgame/cp/appointment/share.png" type="image/x-icon">
+  <title>王者万象棋官方网站-腾讯游戏</title>
+  <!-- 设计：因赛| 重构：因赛 | 创建：2025-06  -->
+  <script type="text/javascript">
+    (function () {
+      var a = navigator.userAgent; if (-1 != a.indexOf("iPhone") || -1 != a.indexOf("iPad") || -1 != a.indexOf("iPod") || -1 != a.indexOf("Android")) {
+        a = document.referrer; if (-1 < a.indexOf("baidu.com") || -1 < a.indexOf("sogou.com") || -1 < a.indexOf("haosou.com") || -1 < a.indexOf("hao76.com")) if (a = void 0, window.sessionStorage) sessionStorage.setItem("channel", "seo"); else { var a = a || 0, b = ""; 0 != a && (b = new Date, b.setTime(b.getTime() + 1E3 * a), b = "; expires=" + b.toGMTString()); document.cookie = "channel=" + escape("seo") + b + "; path=/" }
+        self.location = "/cp/appointment/m.html"+location.search;
+      }
+    })();
+  </script>  
+  <link rel="stylesheet" href="/cp/appointment/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/cp/appointment/css/index.css?v=1.3">
+  <link href="/cp/appointment/css/ui.css" rel="stylesheet" />
+  <link href="/cp/appointment/css/pc.css" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/index.css?v=1.2">
+    <link href="./css/ui.css" rel="stylesheet" />
+    <link href="./css/pc.css" rel="stylesheet" /> -->
+</head>
+<!-- https://game.gtimg.cn/images/osgame/cp/appointment/ -->
+<body>
+  <main class="wrapper" id="wrap">
+    <nav class="nav">
+      <div class="logo"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/logo.png" alt="王者万象棋"></div>
+      <ul class="nav-list" id="menu">
+        
+        <li class=""><a class="nav nav1 active" href="#page1" data-menuanchor="page1" onclick='comm.reportEvent("btn", "pc_dh_index", "PC端首页导航-首页");'></a></li>
+        <li class="">
+          <a class="nav nav2" href="#page2" data-menuanchor="page2" onclick='comm.reportEvent("btn", "pc_dh_wanfa", "PC端首页导航-玩法特色");'></a>          
+        </li>
+        <li class="">
+          <div class="nav nav3" data-menuanchor="page3" onclick='comm.reportEvent("btn", "pc_dh_index", "PC端首页导航-棋手介绍");'>
+            <div class="nav_more">
+              <a href="#page3" onclick='comm.reportEvent("btn", "pc_dhl_wxtj_qsjs", "pc端导航栏棋手介绍");'>棋手介绍</a>  
+              <a href="https://wxq.qq.com/cp/appointment/cardsdetail.html" target="_blank" onclick='comm.reportEvent("btn", "pc_dhl_wxtj_kpjs", "pc端导航栏卡牌介绍");'>卡牌介绍</a>  
+            </div>
+            <div class="nav_more_bg"></div>
+          </div>
+          <!-- <a class="nav nav3" href="#page3" data-menuanchor="page2" onclick='comm.reportEvent("btn", "pc_dh_index", "PC端首页导航-棋手介绍");'></a>           -->
+        </li>
+        <li class=""><a class="nav nav4" href="#page4" data-menuanchor="page4" onclick='comm.reportEvent("btn", "pc_dh_index", "PC端首页导航-万象资讯");'></a></li>
+        <!-- <li class="">
+          <i class="nav_new"></i>
+          <a class="nav nav5" target="_blank" href="https://wxq.qq.com/cp/a20260324xx/index.html" onclick='comm.reportEvent("btn", "pc_dhl_wxxx", "pc端导航栏万象新星");'></a>
+        </li> -->
+      </ul>
+      <a href="javascript:;" class="music"></a>
+      <div class="login">
+        <p id="unlog"><a href="javascript:comm.login();" onclick="comm.reportEvent('btn', 'fbh_home_login', '首页登录')" id="btn_login">[登录]</a></p>
+        <p id="log" style="display: none;">欢迎您，<span id="nickname"></span><a href="javascript:comm.loginOut();" onclick="comm.reportEvent('btn', 'pc_fbh_home_logout', 'pc端首页注销')" id="btn_logout">[注销]</a></p>
+      </div>
+      <!-- <a href="javascript:;" class="music"></a> -->
+      <!-- <a href="javascript:openDialog('dia3');" class="nav-invite">立即预约</a> -->
+      <a href="javascript:;" class="kv_back" onclick="comm.reportEvent('btn', 'pc_home_zs_kv_back', 'PC端首页返回按钮')"></a>
+    </nav>
+    <img src="https://game.gtimg.cn/images/osgame/cp/appointment/loading-bg.jpg" style="display: none;" alt="">
+    <!-- 加载 -->
+    <div class="loading-con" style="display: block;">
+      <p class="loadingnum"><span>100</span>%</p>
+      <p class="loadingtxt">loading...</p>
+      <div class="load-logo"></div>
+    </div>
+
+    <div id="fullPage">
+    	<!--part1-->
+        <div class="section part1" id="part1">
+          <video id="kv_video1" data-keepplaying class="big-video on" autoplay loop muted><source  src="https://game.gtimg.cn/images/osgame/cp/appointment/kv_video.mp4" type="video/mp4" /></video>
+          <!-- <video id="kv_video2" class="big-video" autoplay loop muted><source  src="" type="video/mp4" /></video> -->
+          <div class="kv-main" style="display: none;">
+            <h1 class="slogan">玩法爆料回归 升级万象新局</h1>
+
+            <!-- 倒计时 -->              
+            <div class="timeout">
+              <div class="timecon">
+                <span class="day">-</span>:<span class="hour">--</span>:<span class="minute">--</span>
+              </div>                
+            </div>              
+            <a href="javascript:showOverlay('#video-dia','z3176yy64bd');" class="kv-vid" onclick="comm.reportEvent('btn', 'pc_home_zs_wanfa', 'PC端首页左上角玩法视频')"></a>
+            <!-- class grey 灰态 已预约 -->
+             <div class="kv_btn">
+              <!-- 招募 -->
+              <div class="kv_zm">
+                <!-- 测试资格查询 -->
+                <a href="https://wxq.qq.com/cp/a20260306Qual/index.html" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_zjcs_zgcx', 'PC端终极测试资格查询')" class="kv-test"></a>
+                <a href="https://file.osgame.qq.com/launcher/publish/wzwxq_publish_setup.exe" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_zjcs_download_pc', 'PC端终极测试PC下载')" class="kv-pc"></a>
+                <a href="https://dldir1.qq.com/tgc/WeGameMiniLoader.2002548.7.3.13.1331.exe" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_zjcs_download_wegame', 'PC端终极测试wegame下载')" class="kv-wg"></a>
+              </div>
+              <!-- 预约发布会直播 -->
+              <!--<a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_watchwintertestinglive', 'pc端首页观看冬季测试直播')" class="kv-invite1"></a> -->
+              
+              <!-- 预约游戏 -->
+              <a href="javascript:index.gotoCamp(1);" onclick="comm.reportEvent('btn', 'home_centre_reservation', '首页中央预约游戏')" class="kv-invite2 reserveGame"></a>
+             </div>
+            
+          </div>
+
+           
+          <a href="javascript:showOverlay('#age-dia');" class="kv-age" onclick="comm.reportEvent('btn', 'pc_home_zs_shiling', 'PC端首页适龄提示')"></a>
+          
+          <a href="javascript:showOverlay('#receive-link2');" class="kv-link" onclick="comm.reportEvent('btn', 'pc_home_guajian2', 'pc端首页右下角挂件2')"></a>
+          <a href="javascript:;" class="kv-link2" onclick="comm.reportEvent('btn', 'pc_home_guajian1', 'pc端首页右下角挂件1')"></a>
+          <a href="javascript:;" class="letter-tip" style="display: none;"></a>
+<!--          <a href="javascript:showOverlay('#letter-dia');" class="letter-tip2" onclick="comm.reportEvent('btn', 'pc_home_dbl_invitationletter', 'PC端首页底部邀请涵')">
+            <i></i>
+            <i></i>
+          </a -->
+        </div>
+        <div class="section part2" id="part2">
+          <div class="sw-role">            
+              <div class="sw-r6 act"></div>
+              <div class="sw-r2"></div>
+              
+              <div class="sw-r1"></div>
+              <div class="sw-r3"></div>
+              <div class="sw-r4"></div>
+              <div class="sw-r5"></div>
+          </div>
+          <div class="sw-tit">            
+            <h3 class="sw-t6 act"></h3>
+            <h3 class="sw-t2"></h3>
+            
+            <h3 class="sw-t1"></h3>
+            <h3 class="sw-t3"></h3>
+            <h3 class="sw-t4"></h3>
+            <h3 class="sw-t5"></h3>
+          </div>
+          <div class="s2-sw-con">
+            <div class="swiper s2-sw">
+              <div class="swiper-wrapper">
+                <li class="swiper-slide"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/s2_img6.png"></li>
+                <li class="swiper-slide"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/s2_img2.png"></li>
+                
+                <li class="swiper-slide"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/s2_img1.png"></li>                                
+                <li class="swiper-slide"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/s2_img3.png"></li>
+                <li class="swiper-slide"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/s2_img4.png"></li>
+                <li class="swiper-slide"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/s2_img5.png"></li>
+              </div>
+            </div>
+            
+            
+            <div class="sw-navigation"></div>
+            
+          </div>
+          <div class="s2-prev" onclick="comm.reportEvent('btn', 'pc_home_wanfa_Left', 'PC端玩法特色-左翻页箭头')"></div>
+          <div class="s2-next" onclick="comm.reportEvent('btn', 'pc_home_wanfa_right', 'PC端玩法特色-右翻页箭头')"></div>
+        </div>
+        <div class="section part3" id="part3">
+          <div class="s3-sw-con">
+            <div class="swiper s3-swiper stop-swiping">
+              <div class="swiper-wrapper">
+				  
+                <div class="swiper-slide r5">
+                  <div class="r-desc r5-desc">
+                    <h3 class="r-tit r5-tit">庄小鱼<a class="r-player" href="javascript:showOverlay('#video-dia','n3183swiios');" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoyu_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r5-t1"><a class="r-voice r5-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoyu_台词语音', 'pc端棋手介绍-台词语音')"></a>“在梦境之中寻求真实，在现实之中渴望奇迹。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoyu_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon5_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoyu_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoyu_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon5_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>梦境游戏</h4>
+                        <p class="r-t2">庄小鱼升级时，会随机获得1张效果牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>美梦成真·秘技</h4>
+                        <p class="r-t2">升到5级和6级，各获得1张秘技牌如梦似幻。</p>
+                        <h4>如梦似幻</h4>
+                        <p class="r-t2">消耗8能量，基于场上阵容获取一套梦幻手牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>引擎升级</h4>
+                        <p class="r-t2">获得1张【梦幻引擎】：将商店替换为梦幻商店。<br>若棋手生命值不高于30时战斗失败，则重复获得。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r6">
+                  <div class="r-desc r6-desc">
+                    <h3 class="r-tit r6-tit">乔汐<a class="r-player" href="javascript:showOverlay('#video-dia','q12551sogvn');" onclick="comm.reportEvent('btn', 'pc_home_qishou_qiaoxi_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r6-t1"><a class="r-voice r6-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_qiaoxi_台词语音', 'pc端棋手介绍-台词语音')"></a>“点亮的心，不会轻易熄灭。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_qiaoxi_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon6_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_qiaoxi_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_qiaoxi_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon6_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>温柔呼唤</h4>
+                        <p class="r-t2">使用技能，随机获得1张1-5阶的转瞬英雄牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>海的拥抱·秘技</h4>
+                        <p class="r-t2">每经过4个回合，获得1张秘技牌潮汐的交响。</p>
+                        <h4>潮汐的交响</h4>
+                        <p class="r-t2">场上随机5名英雄等级+4。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>潮起潮落</h4>
+                        <p class="r-t2">开战时，随机传送1个100级的英雄进入战场（不含卡牌效果），传送等级每回合+40。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r4">
+                  <div class="r-desc r4-desc">
+                    <h3 class="r-tit r4-tit">香香<a class="r-player" href="javascript:showOverlay('#video-dia','i1255ql376i');" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiang_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r4-t1"><a class="r-voice r4-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiang_台词语音', 'pc端棋手介绍-台词语音')"></a>“无趣的生活，是一切失败的罪魁祸首！”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiang_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon4_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiang_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiang_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon4_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>究极弩炮</h4>
+                        <p class="r-t2">战斗开始时，香香会使用武器攻击敌人。<br>香香初始攻击力为20，每拥有1名不低于10级的1-3阶英雄，<br>香香的攻击力+20。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>枪炮艺术·秘技</h4>
+                        <p class="r-t2">累积造成10/15/20/30点棋手伤害， 获得1张秘技牌武器改造。</p>
+                        <h4>武器改造</h4>
+                        <p class="r-t2">香香攻击力+20%。进行1次武器改造方案选择。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>火力全开</h4>
+                        <p class="r-t2">香香获得(已方英雄等级总合*0.5)%的攻击力提升。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r7">
+                  <div class="r-desc r7-desc">
+                    <h3 class="r-tit r7-tit">闹闹<a class="r-player" href="javascript:showOverlay('#video-dia','b3185jvtr9e');" onclick="comm.reportEvent('btn', 'pc_home_qishou_naonao_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r7-t1"><a class="r-voice r7-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_naonao_台词语音', 'pc端棋手介绍-台词语音')"></a>“雨滴里藏着彩虹，泡泡里住着美梦。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_naonao_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon7_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_naonao_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_naonao_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon7_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>派对泡泡</h4>
+                        <p class="r-t2">使用技能，从随机2个阵营中选择1个，<br>之后技能替换为：花费1点能量，获得1张该阵营的英雄牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>快乐集结·秘技</h4>
+                        <p class="r-t2">上阵6名技能所选阵营英雄，获得1张秘技牌朋友多多。</p>
+                        <h4>朋友多多</h4>
+                        <p class="r-t2">随机获得4张技能所选阵营的英雄牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>狂欢时刻</h4>
+                        <p class="r-t2">获得1张打成一片。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r8">
+                  <div class="r-desc r8-desc">
+                    <h3 class="r-tit r8-tit">白歌<a class="r-player" href="javascript:showOverlay('#video-dia','o3185vukvqd');" onclick="comm.reportEvent('btn', 'pc_home_qishou_baige_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r8-t1"><a class="r-voice r8-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_baige_台词语音', 'pc端棋手介绍-台词语音')"></a>“兴之所至，心之所安。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_baige_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon8_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_baige_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_baige_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon8_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>神来之笔</h4>
+                        <p class="r-t2">每进行4次英雄合成，白歌获得1张即兴创作。</p>
+                        <h4>即兴创作</h4>
+                        <p class="r-t2">随机获得场上1名英雄的复制。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>天生我才·秘技</h4>
+                        <p class="r-t2">使用6张即兴创作，获得1张秘技牌灵感爆发。</p>
+                        <h4>灵感爆发</h4>
+                        <p class="r-t2">释放3道剑气，斩击手牌中随机3张非觉醒英雄牌，<br>将每张牌斩为2张转瞬版复制。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>惊才绝绝</h4>
+                        <p class="r-t2">获得一张奇才：指定1名英雄，获得4张该英雄牌。</p>
+                        <h4>奇才</h4>
+                        <p class="r-t2">5指定1名英雄，获得4张该英雄牌。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r9">
+                  <div class="r-desc r9-desc">
+                    <h3 class="r-tit r9-tit">孙小宾<a class="r-player" href="javascript:showOverlay('#video-dia','r3185fopx5h');" onclick="comm.reportEvent('btn', 'pc_home_qishou_sunxiaobin_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r9-t1"><a class="r-voice r9-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_sunxiaobin_台词语音', 'pc端棋手介绍-台词语音')"></a>“时间会证明一切的！”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_sunxiaobin_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon9_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_sunxiaobin_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_sunxiaobin_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon9_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>时光倒流</h4>
+                        <p class="r-t2">使用技能，孙小宾回溯上回合使用过的英雄牌（非觉醒）<br>和效果牌，随机触发其中1张。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>时间魔法·秘技</h4>
+                        <p class="r-t2">首次单回合使用8张英雄或效果牌，获得1张秘技牌时之回环。</p>
+                        <h4>时之回环</h4>
+                        <p class="r-t2">使用后，记录你从现在开始使用的所有非觉醒英雄牌和效果牌&ensp;&ensp;<br>（最多8张），并在下回合开始时，<br>再次触发这些卡牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>时光宝藏</h4>
+                        <p class="r-t2">获得一张更强力的永恒时之回环，<br>可以记录12张英雄牌或效果牌。</p>
+                        <h4>永恒时之回环</h4>
+                        <p class="r-t2">使用后，记录你从现在开始使用的所有非觉醒英雄牌<br>和效果牌(最多12张)，并在下回合开始时，<br>再次触发这些卡牌。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r3">
+                  <div class="r-desc r3-desc">
+                    <h3 class="r-tit r3-tit">弈星<a class="r-player" href="javascript:showOverlay('#video-dia','y3185mhj1ff');" onclick="comm.reportEvent('btn', 'pc_home_qishou_yixing_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r3-t1"><a class="r-voice r3-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yixing_台词语音', 'pc端棋手介绍-台词语音')"></a>“不得贪胜，不可不胜。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_yixing_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon3_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yixing_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yixing_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon3_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>棋道万象</h4>
+                        <p class="r-t2">本回合战斗开始时，弈星随机复制1名敌方英雄。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>谋而后定·秘技 </h4>
+                        <p class="r-t2">第4/9回合，获得1张秘技牌驭势。</p>
+                        <h4>驭势 </h4>
+                        <p class="r-t2">战斗开始时，将敌方场上所有英雄复制进你的手牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>神之一手</h4>
+                        <p class="r-t2">开战时，随机从敌方等级最高的2名英雄中复制1名，<br>临时加入我方战场。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r10">
+                  <div class="r-desc r10-desc">
+                    <h3 class="r-tit r10-tit">明先生<a class="r-player" href="javascript:showOverlay('#video-dia','m1256uvyftj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_mingxiansheng_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r10-t1"><a class="r-voice r10-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_mingxiansheng_台词语音', 'pc端棋手介绍-台词语音')"></a>“人生乏味啊，我欲令之光怪陆离。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_mingxiansheng_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon10_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_mingxiansheng_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_mingxiansheng_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon10_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>先知卦象</h4>
+                        <p class="r-t2">使用技能，从2种卦象中选择1个，卦象效果持续3个回合。</p>
+                        <h4>卦象·丰</h4>
+                        <p class="r-t2">每回合获得4次临时刷新，每回合能量-2，持续3个回合。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>天降鸿运·秘技</h4>
+                        <p class="r-t2">第6/12回合，获得1张秘技牌命运馈赠。</p>
+                        <h4>命运馈赠</h4>
+                        <p class="r-t2">从2个馈赠中选择1个。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>飞龙在天</h4>
+                        <p class="r-t2">强化明先生的卦象。<br>卦象·节：每回合额外获得1能量。<br>卦象·丰：每回合获得6次免费刷新。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r11">
+                  <div class="r-desc r11-desc">
+                    <h3 class="r-tit r11-tit">常小娥<a class="r-player" href="javascript:showOverlay('#video-dia','t31855pmw3y');" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoe_介绍视频', 'pc端棋手介绍-介绍视频')"></a></h3>
+                    <p class="r-t1 r11-t1"><a class="r-voice r11-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoe_台词语音', 'pc端棋手介绍-台词语音')"></a>“常怀善意，才能感受这个世界的美好。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoe_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon11_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoe_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoe_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon11_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>小菟助力</h4>
+                        <p class="r-t2">使用技能，小菟随机助力1名英雄，使其等级+2.本场比赛中，<br>小菟每助力过1次，等级提升效果+1。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>兔飞猛进·秘技</h4>
+                        <p class="r-t2">己方英雄等级总和达到50/150/350级，获得1张秘技牌小菟送福。</p>
+                        <h4>小菟送福</h4>
+                        <p class="r-t2">对场上的随机4名英雄各触发1次小菟助力，使其等级+2。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>月之特调</h4>
+                        <p class="r-t2">小菟提供等级时，<br>每5级使其额外获得1项随机属性：<br>10%攻速/3%物理和法术吸血/3点物理和法术防御。<br>且每通过小菟助力提供70级时，获得1张小菟送福。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r12">
+                  <div class="r-desc r12-desc">
+                    <h3 class="r-tit r12-tit">镜
+                      <!-- <a class="r-player" href="javascript:showOverlay('#video-dia','y3185mhj1ff');" onclick="comm.reportEvent('btn', 'pc_home_qishou_jing_介绍视频', 'pc端棋手介绍-介绍视频')"></a> -->
+                    </h3>
+                    <p class="r-t1 r12-t1"><a class="r-voice r12-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_jing_台词语音', 'pc端棋手介绍-台词语音')"></a>“破碎定义，做不平凡的自己。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_jing_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon12_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_jing_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_jing_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon12_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>无穷镜像</h4>
+                        <p class="r-t2">使用技能，获得1张镜像牌，每使用3次技能，<br>该技能能量消耗+1。</p>
+                        <h4>镜像</h4>
+                        <p class="r-t2">该卡牌会自动变为上一张打出的英雄牌<br>(不能复制其他打出的镜像牌)。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>镜像之力·秘技</h4>
+                        <p class="r-t2">使用4张镜像，获得1张秘技牌万镜。</p>
+                        <h4>万镜</h4>
+                        <p class="r-t2">随机复制场上的4张英雄牌（不可超过场上英雄数量）。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>镜花影</h4>
+                        <p class="r-t2">商店里的英雄牌在购买后，<br>会留下1个购买消耗+1的镜像版本（不计入秘技任务）。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r1">
+                  <div class="r-desc r1-desc">
+                    <h3 class="r-tit r1-tit">小妲己
+                      <!-- <a class="r-player" href="javascript:showOverlay('#video-dia','m1256uvyftj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaodaji_介绍视频', 'pc端棋手介绍-介绍视频')"></a> -->
+                    </h3>
+                    <p class="r-t1 r1-t1"><a class="r-voice r1-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaodaji_台词语音', 'pc端棋手介绍-台词语音')"></a>“戏里戏外，都是我向往的世界。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaodaji_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaodaji_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaodaji_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_3.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>怦然心动</h4>
+                        <p class="r-t2">每购买4张英雄牌，小妲己随机获得1张效果牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>心动节拍·秘技</h4>
+                        <p class="r-t2">每触发5/4/3次怦然心动，获得1张秘技牌心之引力。</p>
+                        <h4>心之引力</h4>
+                        <p class="r-t2">获得3次临时刷新。接下来3次刷新时，商店里的牌购买消耗-1。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>魅力无限</h4>
+                        <p class="r-t2">每回合打出的第1张效果牌会触发两次。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r2">
+                  <div class="r-desc r2-desc">
+                    <h3 class="r-tit r2-tit">瑶妹
+                      <a class="r-player" href="javascript:showOverlay('#video-dia','g1259yqm2gb');" onclick="comm.reportEvent('btn', 'pc_home_qishou_yao_介绍视频', 'pc端棋手介绍-介绍视频')"></a>
+                    </h3>
+                    <p class="r-t1 r2-t1"><a class="r-voice r2-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yao_台词语音', 'pc端棋手介绍-台词语音')"></a>“我的梦想就是，看遍世界上所有有趣的东西~”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_yao_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon2_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yao_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yao_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon2_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>可爱小鹿</h4>
+                        <p class="r-t2">游戏开始时，瑶召唤自己心爱的小鹿前来助阵，<br>小鹿每回合等级+2，如果上回合战斗胜利，等级额外+4。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>超绝可爱小鹿·秘技</h4>
+                        <p class="r-t2">每经过3个回合，获得1张秘技牌神奇小鹿。</p>
+                        <h4>神奇小鹿·觉醒</h4>
+                        <p class="r-t2">强化小鹿，使其获得等级或特性提升。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>巨型玩偶</h4>
+                        <p class="r-t2">小鹿等级+30，并获得一件【小鹿的庇护】。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r13">
+                  <div class="r-desc r13-desc">
+                    <h3 class="r-tit r13-tit">马克
+                      <!-- <a class="r-player" href="javascript:showOverlay('#video-dia','m1256uvyftj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_marco_介绍视频', 'pc端棋手介绍-介绍视频')"></a> -->
+                    </h3>
+                    <p class="r-t1 r13-t1"><a class="r-voice r13-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_marco_台词语音', 'pc端棋手介绍-台词语音')"></a>“我能说走就走，也能随时闪亮登场！”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_marco_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon13_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_marco_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_marco_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon13_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>寻宝之旅</h4>
+                        <p class="r-t2">马克每打出4张3阶及以下的英雄牌，<br>随机获得1张宝藏牌。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>终极宝藏·秘技</h4>
+                        <p class="r-t2">使用7张宝藏牌，获得1张秘技牌终极宝藏。</p>
+                        <h4>终极宝藏正是在下</h4>
+                        <p class="r-t2">从随机3个终极宝藏中选择1个。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>瓜分宝藏</h4>
+                        <p class="r-t2">从2种英雄强化效果中选择1个。</p>
+                        <h4>阳光普照</h4>
+                        <p class="r-t2">战斗开始时，你的全体英雄获得1%*<br>已打出宝藏牌数量的伤害提升。</p>
+                        <h4>重点照顾</h4>
+                        <p class="r-t2">战斗开始时，你的人数最多的同品阶英雄获得2%*<br>已打出宝藏牌数量的伤害提升。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r18">
+                  <div class="r-desc r18-desc">
+                    <h3 class="r-tit r18-tit">嬴律
+                      <a class="r-player" href="javascript:showOverlay('#video-dia','p3196v063lj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_yinglyu_介绍视频', 'pc端棋手介绍-介绍视频')"></a>
+                    </h3>
+                    <p class="r-t1 r18-t1"><a class="r-voice r18-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yinglyu_台词语音', 'pc端棋手介绍-台词语音')"></a>“规则决定秩序，而我，决定规则。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_yinglyu_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon18_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yinglyu_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yinglyu_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon18_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>最高决策者</h4>
+                        <p class="r-t2">比赛开始时，嬴律获得1张战略决策。<br>在第一次发布至高决策后，可以再获得1张。</p>
+                        <h4>战略决策</h4>
+                        <p class="r-t2">挑选1个战略决策，赢律本场比赛获得此效果。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>至高之主</h4>
+                        <p class="r-t2">每经过5个回合，获得1张秘技牌至高决策。</p>
+                        <h4>至高决策</h4>
+                        <p class="r-t2">嬴律从4个至高决策中选择1个颁布，对全场所有玩家生效，持续3个回合。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>特权决策</h4>
+                        <p class="r-t2">选择1个特权决策颁布，对所有玩家生效，并且自己额外享受特权效果。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r14">
+                  <div class="r-desc r14-desc">
+                    <h3 class="r-tit r14-tit">玉环
+                      <!-- <a class="r-player" href="javascript:showOverlay('#video-dia','m1256uvyftj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_yuhuan_介绍视频', 'pc端棋手介绍-介绍视频')"></a> -->
+                    </h3>
+                    <p class="r-t1 r14-t1"><a class="r-voice r14-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yuhuan_台词语音', 'pc端棋手介绍-台词语音')"></a>“心中有所想，便能在琴声中有所得。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_yuhuan_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon14_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yuhuan_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_yuhuan_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon14_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>霓裳曲</h4>
+                        <p class="r-t2">每打出3张非觉醒英雄牌时，玉环将根据出牌类型<br>以不同的指法弹奏琵琶，并触发1次相应效果。</p>
+                        <h4>轮指</h4>
+                        <p class="r-t2">使用3张相同非觉醒英雄牌:使用轮指，<br>下个指法触发2次。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>自成曲调·秘技</h4>
+                        <p class="r-t2">累积弹奏5次琵琶，获得1张秘技牌惊鸿调，每回合限1次。</p>
+                        <h4>惊鸿调</h4>
+                        <p class="r-t2">使用记录的前5次的指法来弹奏琵琶，并触发对应的效果。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>余音绕梁</h4>
+                        <p class="r-t2">玉环从3种指法中选择1种进行强化。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r15">
+                  <div class="r-desc r15-desc">
+                    <h3 class="r-tit r15-tit">昭君
+                      <!-- <a class="r-player" href="javascript:showOverlay('#video-dia','m1256uvyftj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_zhaojun_介绍视频', 'pc端棋手介绍-介绍视频')"></a> -->
+                    </h3>
+                    <p class="r-t1 r15-t1"><a class="r-voice r15-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_zhaojun_台词语音', 'pc端棋手介绍-台词语音')"></a>“灵魂仍然炽热，但回忆已被冰封。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_zhaojun_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon15_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_zhaojun_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_zhaojun_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon15_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>冰之心</h4>
+                        <p class="r-t2">指定1名英雄，将其冻结。<br>战斗结束后，该英雄随机变为更高1阶的英雄，继承等级。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>极寒冰冻·秘技</h4>
+                        <p class="r-t2">第6/9回合，获得1张秘技牌深度冻结。</p>
+                        <h4>深度冻结</h4>
+                        <p class="r-t2">从随机3个强化效果中选择1个。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>雪暴</h4>
+                        <p class="r-t2">从3个增益效果中选择1个。</p>
+                        <h4>坚冰</h4>
+                        <p class="r-t2">战斗开始时，你等级最高的英雄获得800点生命值、<br>100点物理和法术攻击力。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r16">
+                  <div class="r-desc r16-desc">
+                    <h3 class="r-tit r16-tit">班叔
+                      <!-- <a class="r-player" href="javascript:showOverlay('#video-dia','m1256uvyftj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_uncleban_介绍视频', 'pc端棋手介绍-介绍视频')"></a> -->
+                    </h3>
+                    <p class="r-t1 r16-t1"><a class="r-voice r16-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_uncleban_台词语音', 'pc端棋手介绍-台词语音')"></a>“真理至高无上，而生活还在真理之上。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_uncleban_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon16_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_uncleban_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_uncleban_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon16_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>神匠</h4>
+                        <p class="r-t2">比赛开始时，获得1张便携式机关。<br>棋手等级达到2/3/4时，各获得1张机关构筑。</p>
+                        <h4>便携式机关</h4>
+                        <p class="r-t2">从热能陷阱、电磁弹簧、<br>等离子屏障3种机关中选择1个。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>构筑升级·秘技</h4>
+                        <p class="r-t2">每使用20能量，班叔获得1张构筑升级。每次完成秘技任务后，<br>任务需求的能量计数+10。</p>
+                        <h4>构筑升级</h4>
+                        <p class="r-t2">指定场上1个机关升级其效果。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>成品方案</h4>
+                        <p class="r-t2">从满级的热能陷阱、电磁弹簧、等离子屏障中选择1个。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide r17">
+                  <div class="r-desc r17-desc">
+                    <h3 class="r-tit r17-tit">姜导
+                      <!-- <a class="r-player" href="javascript:showOverlay('#video-dia','m1256uvyftj');" onclick="comm.reportEvent('btn', 'pc_home_qishou_dirjiang_介绍视频', 'pc端棋手介绍-介绍视频')"></a> -->
+                    </h3>
+                    <p class="r-t1 r17-t1"><a class="r-voice r17-voice" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_dirjiang_台词语音', 'pc端棋手介绍-台词语音')"></a>“想要改变的前提，是坚持。”</p>
+                    <div class="s3_btn">
+                      <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_qishou_dirjiang_jineng', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon17_1.png" alt="">
+                        <p>技能</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_dirjiang_miji', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon1_2.png" alt="">
+                        <p>秘技</p>
+                      </a>
+                      <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_qishou_dirjiang_zhuanshu', 'PC端棋手介绍-技能介绍')">
+                        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/role/role_icon17_2.png" alt="">
+                        <p>专属</p>
+                      </a>
+                    </div>
+                    <div class="s3_desc">
+                      <div class="s3_desc_p on">
+                        <h4>钦定主角</h4>
+                        <p class="r-t2">使用技能，指定1名英雄成为主角，获得效果：<br>每打出2张英雄或效果牌，等级+1（每回合最多+5）。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>封神时刻·秘技</h4>
+                        <p class="r-t2">己方英雄首次升到25级，获得1张秘技牌封神一瞬。</p>
+                        <h4>封神一瞬</h4>
+                        <p class="r-t2">指定1名英雄，使其每次等级永久提升时，都额外+1级。</p>
+                      </div>
+                      <div class="s3_desc_p">
+                        <h4>完美演出</h4>
+                        <p class="r-t2">封神一瞬指定的英雄在战斗开始时获得30%物理和法术吸血。</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+				
+				
+              </div>
+              <div class="swiper-button-next s3_next"></div>
+              <div class="swiper-button-prev s3_prev"></div>
+            </div>
+            <div class="swiper s3-swiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoyu', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh5"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_qiaoxi', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh6"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiang', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh4"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_naonao', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh7"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_baige', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh8"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_sunxiaobin', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh9"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_yixing', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh3"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_mingxiansheng', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh10"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoe', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh11"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_jing', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh12"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaodaji', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh1"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_yao', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh2"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_marco', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh13"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_yinglyu', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh18"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_yuhuan', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh14"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_zhaojun', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh15"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_uncleban', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh16"></i>
+                </div>
+                <div class="swiper-slide" onclick="comm.reportEvent('btn', 'pc_home_qishou_dirjiang', 'PC端棋手介绍-棋手头像')">                  
+                  <i class="rh17"></i>
+                </div>
+                
+
+              </div>
+            </div>
+          </div>
+          
+          <!-- <ul class="s3-con-nav">
+            <li class="rn5 on" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiaoyu', 'PC端棋手介绍-棋手头像')"><i></i></li>
+            <li class="rn6" onclick="comm.reportEvent('btn', 'pc_home_qishou_qiaoxi', 'PC端棋手介绍-棋手头像')"><i></i></li>
+            <li class="rn4" onclick="comm.reportEvent('btn', 'pc_home_qishou_xiang', 'PC端棋手介绍-棋手头像')"><i></i></li>
+            <li class="rn7" onclick="comm.reportEvent('btn', 'pc_home_qishou_naonao', 'PC端棋手介绍-棋手头像')"><i></i></li>
+            <li class="rn8" onclick="comm.reportEvent('btn', 'pc_home_qishou_baige', 'PC端棋手介绍-棋手头像')"><i></i></li>
+            <li class="rn9" onclick="comm.reportEvent('btn', 'pc_home_qishou_sunxiaobin', 'PC端棋手介绍-棋手头像')"><i></i></li>
+            <li class="rn3" onclick="comm.reportEvent('btn', 'pc_home_qishou_yixing', 'PC端棋手介绍-棋手头像')"><i></i></li>
+            <li class="rn10" onclick="comm.reportEvent('btn', 'pc_home_qishou_mingxiansheng', 'PC端棋手介绍-棋手头像')"><i></i></li>
+          </ul> -->
+        </div>
+        <div class="section part4" id="part4">
+          <!-- 新闻轮播 -->
+          <div class="news-con">
+            <div class="news-ysz"></div>
+            <h2 class="news-tit">万象资讯</h2>
+            <div class="news-data">
+              <div class="news-img-sw">
+                <div class="swiper news-sw">
+                  <div class="swiper-wrapper">
+                    <!-- <div class="swiper-slide"><img src="https://game.gtimg.cn/images/osgame/cp/main/news-poster1.jpg"></div> -->
+                  </div>
+                  <div class="news-navigation swiper-pagination"></div>
+                </div>
+              </div>
+
+              <div class="news-box">
+                <div class="news-tab">
+                  <a href="javascript:;" class="news-btn on" onclick="comm.reportEvent('btn', 'pc_home_zixun_all', 'PC端万象资讯-标签')">全部</a>
+                  <a href="javascript:;" class="news-btn" onclick="comm.reportEvent('btn', 'pc_home_zixun_news', 'PC端万象资讯-标签')">新闻</a>
+                  <a href="javascript:;" class="news-btn" onclick="comm.reportEvent('btn', 'pc_home_zixun_bulletin', 'PC端万象资讯-标签')">公告</a>
+                  <a href="javascript:;" class="news-btn" onclick="comm.reportEvent('btn', 'pc_home_zixun_activity', 'PC端万象资讯-标签')">活动</a>
+                  <a href="javascript:;" class="news-btn" onclick="comm.reportEvent('btn', 'pc_home_zixun_column', 'PC端万象资讯-标签')">栏目</a>
+                </div>
+                <div class="news-ul" id="list1">
+                  <ul class="news-list on">
+                  </ul>
+                  <ul class="news-list">
+                  </ul>
+                  <ul class="news-list">
+                  </ul>
+                  <ul class="news-list">
+                  </ul>
+                  <ul class="news-list">
+                  </ul>
+                </div>
+                
+                <a href="/cp/appointment/newslist.html" class="news-more" onclick="comm.reportEvent('btn', 'pc_home_zixun_more', 'PC端万象资讯-更多资讯')"></a>                            
+              </div>
+              
+            </div>
+          </div>
+          <!-- 新闻列表 -->
+          <div class="news-wrap news-wrap1" style="display: none;">
+            <div class="news-list-con">
+              <p class="news-path"><a href="#page1" class="newsback">首页</a>><a href="javascript:;" class="newsback">万象资讯</a>>新闻列表</p>
+              <div class="news-tab">
+                <a href="javascript:;" class="news-btn on">全部</a>
+                <a href="javascript:;" class="news-btn">新闻</a>
+                <a href="javascript:;" class="news-btn">公告</a>
+                <a href="javascript:;" class="news-btn">活动</a>
+                <a href="javascript:;" class="news-btn">攻略</a>
+              </div>
+              <div class="news-ul" id="list2">
+                <ul class="news-list on">
+                </ul>
+                <ul class="news-list">
+                </ul>
+                <ul class="news-list">
+                </ul>
+                <ul class="news-list">
+                </ul>
+                <ul class="news-list">
+                </ul>
+              </div>
+              <div class="none-tip"></div>
+            </div>
+          </div>
+          <!-- 新闻详情 -->
+          <div class="news-wrap news-wrap2" style="display: none;">
+            <div class="tit-mask"></div>
+            <div class="news-detail-con">
+              <!-- <p class="news-detail-path">首页>新闻中心>研发者日志：百人模式玩法爆料</p>
+              <p class="detail-tit">研发者日志：百人模式玩法爆料</p>
+              <p class="detail-desc">
+                <span class="time">发布于2025/05/25 21:35:02</span>
+                <span class="num"><i class="detail-star"></i>2.42万次阅读</span>
+              </p>
+              <div class="detail-main">
+                <div class="detail-data"></div>
+              </div> -->
+            </div>
+            <!-- <a href="javascript:copyText();" class="copy-href">复制文章链接分享给好友<i></i></a> -->
+            <div class="news-pageation">
+              <a href="javascript:;" class="pre-news" style="display: none;">
+                <i></i>
+                <span class="t1">上一篇</span>
+                <span class="t2">棋手机制的策划思路</span>
+              </a>
+              <a href="javascript:;" class="next-news" style="display: none;">
+                <i></i>
+                <span class="t1">下一篇</span>
+                <span class="t2">棋手机制的策划思路</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!--foot-->
+        <div class="section fp-auto-height foot">
+
+        	<div id="afooter"></div>
+        </div>
+    </div>
+
+    <div class="commit-media">
+      <div class="icons">
+        <a class="si1" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_dblgh_qwdj', 'PC端首页底部官号-企业微信点击')">
+          <div class="media-code">
+            <img class="adtag_code" src="https://game.gtimg.cn/images/osgame/cp/appointment/code-qw.png" alt="">
+          </div>
+          <p>企业微信</p>
+        </a>
+        <a class="si2" href="https://camp.qq.com/h5/webdist/redirect-app/index.html?module=mygameprofile&params=multiGameId%3D30001&channelId=6920" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_yddj', 'PC端首页底部官号-营地专区点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-yd.png" alt="">
+          </div>
+          <p>王者营地</p>
+        </a>
+        <a class="si3" href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_dblgh_gzhdj', 'PC端首页底部官号-微信公众号点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-wx.png" alt="">
+          </div>
+          <p>微信公众号</p>
+        </a>
+        <a class="si4" href="https://pd.qq.com/s/1lf9s4x4t?b=9" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_qqpddj', 'PC端首页底部官号-腾讯频道点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-tx.png" alt="">
+          </div>
+          <p>腾讯频道</p>
+        </a>
+        <a class="si5" href="https://space.bilibili.com/1308577656" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_bzdj', 'PC端首页底部官号-B站点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-bz.png" alt="">
+          </div>
+          <p>哔哩哔哩</p>
+        </a>
+        <a class="si6" href="https://www.douyin.com/user/MS4wLjABAAAAs7Woowpt-zneS1WlLa7Pyqd3lVv2D8rIfWJp63ZSamY" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_dydj', 'PC端首页底部官号-抖音点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-dy.png" alt="">
+          </div>
+          <p>抖音</p>
+        </a>
+        <a class="si7" href="https://v.kuaishou.com/nri2t1Tp" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_ksdj', 'PC端首页底部官号-快手点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-ks.png" alt="">
+          </div>          
+          <p>快手</p>
+        </a>
+        <a class="si8" href="https://weibo.com/u/7774689081" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_wbdj', 'PC端首页底部官号-微博点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-wb.png" alt="">
+          </div>
+          <p>微博</p>
+        </a>
+        <a class="si9" href="http://xhslink.com/m/5l4KnfORu22" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_xhsdj', 'PC端首页底部官号-小红书点击')">
+          <div class="media-code">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/code-xhs.png" alt="">
+          </div>
+          <p>小红书</p>
+        </a>
+        <a class="si10" href="https://www.wegame.com.cn/store/2002548/" target="_blank" onclick="comm.reportEvent('btn', 'pc_home_dblgh_wegamedj', 'PC端首页底部官号-wegame')">
+
+        </a>
+      </div>
+      <div class="arrow"></div>
+      <!-- class gray 灰态 已预约 -->
+      <a href="javascript:index.gotoCamp(2);" onclick="comm.reportEvent('btn', 'reservation_reward', '预约奖励')" class="invite-btn2"></a>
+      <a href="javascript:index.gotoCamp(1, 1);" onclick="comm.reportEvent('btn', 'home_dbl_reservation', '底部栏立即预约')" class="invite-btn reserveGame" style="display: none;">预约游戏</a>
+    </div>
+
+  </main>
+
+  <!-- 一封信 -->
+   <div class="one_box" style="display: none;">
+
+   </div>
+
+  <div class="wx-login-overlay ui-overlay" id="login-wx">
+    <div class="login-content">
+      <p>微信登录</p>
+      <img class="QR-code" />
+      <img class="bg-line-img" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/wx-login-overlay-bg.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/close.svg" />
+    </div>
+  </div>
+
+  <!-- 领取预约奖励 -->
+  <div class="ui-overlay" id="receive-prize">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">预约奖励</div>
+      <div class="slot-content">
+        <p>绑定手机号且完成信息订阅后视为预约成功，可获得领取礼包的资格 </p>
+        <div class="chess prize-view">
+          <div class="prize-content">
+            <div class="game-info">
+              <p>王者万象棋道具领取规则</p>
+            </div>
+            <div class="prize-list">
+              <div>
+                <div class="prize-image-view">
+                  <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/chess-prize-1.png" />
+                </div>
+                <p>万事如弈×1</p>
+              </div>
+              <div>
+                <div class="prize-image-view">
+                  <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/chess-prize-2.png" />
+                </div>
+                <p>魔法雪球×1</p>
+              </div>
+              <div>
+                <div class="prize-image-view">
+                  <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/chess-prize-3.png" />
+                </div>
+                <p>万象之约(1年)×1</p>
+              </div>
+            </div>
+          </div>
+          <div class="remark">
+            <p>礼包将在游戏上线后发放至首月内完成注册的角色邮箱，单账号限领1次，多平台预约不会叠加<span>（奖励预览为研发中版本，请以上线版本为准）</span></p>
+          </div>
+        </div>
+        <div class="honor prize-view">
+          <div class="prize-content">
+            <div class="game-info">
+              <p>王者荣耀道具领取规则</p>
+            </div>
+            <div class="prize-list">
+              <div>
+                <div class="prize-image-view">
+                  <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/honor-prize-1.png" />
+                </div>
+                <p>钻石×50</p>
+              </div>
+              <div>
+                <div class="prize-image-view">
+                  <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/honor-prize-2.png" />
+                </div>
+                <p>亲密玫瑰×2</p>
+              </div>
+              <div>
+                <div class="prize-image-view">
+                  <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/honor-prize-3.png" />
+                </div>
+                <p>新品英雄抽奖券×1</p>
+              </div>
+            </div>
+          </div>
+          <div class="remark">
+            <p>预约成功后即可选择王者荣耀角色领取，单账号限领1次</p>
+          </div>
+        </div>
+        <div class="account-choose" style="display: none;">
+          <div class="ui-select">
+            <div class="select-label">昵称</div>
+            <div class="select-value">
+              <input placeholder="请选择角色昵称" readonly />
+              <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/arrow-long.svg" />
+            </div>
+          </div>
+          <div class="ui-select">
+            <div class="select-label">系统</div>
+            <div class="select-value">
+              <input placeholder="请选择系统" readonly />
+              <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/arrow-long.svg" />
+            </div>
+          </div>
+          <div class="ui-select">
+            <div class="select-label">大区</div>
+            <div class="select-value">
+              <input placeholder="请选择大区" readonly />
+              <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/arrow-long.svg" />
+            </div>
+          </div>
+          <div class="ui-select">
+            <div class="select-label">平台</div>
+            <div class="select-value">
+              <input placeholder="请选择平台" readonly />
+              <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/arrow-long.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 绑定手机号 -->
+  <div class="ui-overlay" id="bind-phone-number">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/overlayTitle/common.png" /></div>
+      <div class="slot-content">
+        <!-- 共用部分 已绑定手机号提示以及修改手机号 -->
+        <div class="Bound-phone-number" style="display: none;">
+        <div class="reserved-tip">你已在王者星会员绑定手机号</div>
+        <div class="phone-number-input">
+          <input placeholder="请输入手机号" />
+          <div class="change-icon"><img />更改</div>
+        </div>
+        </div>
+        <!-- 手机号已绑定 已预约 -->
+        <div class="status-1" style="display: none;">
+          <div class="cancel-auth">
+            <span>点击此处</span> 解除授权并退订信息。因系统延迟的原因，在您执行解除操作的3个工作日内后，该手机号将不再收到相关通知
+          </div>
+        </div>
+        <!-- 手机号已绑定 未绑定 -->
+        <div class="status-3">
+          <div class="phone-number-input">
+            <div class="prefix-number">+86</div>
+            <input placeholder="请输入手机号" />
+          </div>
+          <div class="code-input">
+            <input placeholder="请输入验证码" />
+            <div class="get-code">获取验证码</div>
+          </div>
+        </div>
+        <!-- 共用部分 预约授权消息接收以及按钮 -->
+        <div class="auth-info">
+          <div class="expand handle-box" data-type="expand" style="display: none;">展开<img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/arrow.svg"></div>
+          <div class="collapse handle-box" data-type="collapse">收起<img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/arrow.svg"></div>
+          
+          <!-- 如果需要禁止点击 使用data-readonly="true" -->
+          <!-- 使用data-value标记不同的checkbox,获取已选中的checkbox 详见 方法 ui.js => getCheckboxActive -->
+          <!-- 直接使用html制作圆环会导致某些分辨率下的圆环和实心圆显示错位的问题 所以改成svg形式 -->
+
+          <div class="ui-checkbox on" data-readonly="true" data-value="policy">
+            <div class="checkbox-value">
+              <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value.svg" class="cancel-status" />
+              <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value-active.svg" class="active-status" />
+            </div>
+            <div class="checkbox-label">成功绑定后，该手机号将成为您与王者IP游戏的“链接”第一时间以电话或者短信形式为您带来王者万象棋、王者荣耀世界、王者荣耀及王者营地相关的测试预约、版本更新、活动惊喜等相关信息!</div>
+          </div>
+          <div class="list">
+            <div class="ui-checkbox on">
+              <div class="checkbox-value">
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value.svg" class="cancel-status" />
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value-active.svg" class="active-status" />
+              </div>
+              <div class="checkbox-label">接收王者万象棋信息</div>
+            </div>
+            <div class="ui-checkbox">
+              <div class="checkbox-value">
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value.svg" class="cancel-status" />
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value-active.svg" class="active-status" />
+              </div>
+              <div class="checkbox-label">接收王者荣耀世界信息</div>
+            </div>
+            <div class="ui-checkbox">
+              <div class="checkbox-value">
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value.svg" class="cancel-status" />
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value-active.svg" class="active-status" />
+              </div>
+              <div class="checkbox-label">接收王者荣耀信息</div>
+            </div>
+            <div class="ui-checkbox">
+              <div class="checkbox-value">
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value.svg" class="cancel-status" />
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/svg/checkbox-value-active.svg" class="active-status" />
+              </div>
+              <div class="checkbox-label">接收王者营地信息</div>
+            </div>
+          </div>
+        </div>
+        <!-- 共用部分 确认预约按钮 -->
+        <div class="buttons">
+          <div class="ui-button">确认预约</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 预约成功 -->
+  <div class="ui-overlay" id="reserve-success">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">
+        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/overlayTitle/subscribeSuccess.png" />
+      </div>
+      <div class="slot-content">
+        <div class="text-content">扫码关注王者万象棋企业微信<br />获取王者万象棋一手游戏资讯</div>
+        <img class="adtag_code" src="https://game.gtimg.cn/images/osgame/cp/appointment/wxQrCode.png"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 解除授权 -->
+  <div class="ui-overlay" id="revoke-auth">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">确认解除授权</div>
+      <div class="slot-content">
+        <div class="text-content">确认解除授权并退订信息吗?因系统延迟的原因，在您执行解除操作的3个工作日后，该手机号将不再收到相关通知</div>
+        <div class="buttons">
+          <div class="ui-button cancel-btn">我再想想</div>
+          <div class="ui-button">确认解除</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 领取奖励确认账号 -->
+  <div class="ui-overlay" id="confirm-account">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">确认领取奖励角色账号</div>
+      <div class="slot-content">
+        <div class="text-content">确认领取王者万象棋奖励至账号</div>
+        <div class="text-content blue">XXXX(用户角色名)?</div>
+        <div class="buttons">
+          <div class="ui-button">更换账号</div>
+          <div class="ui-button">确认领取</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 选择登录弹窗 -->
+  <div class="ui-overlay" id="login-choose">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" onclick="comm.reportEvent('btn', 'login_close', '关闭登录')" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">
+        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/overlayTitle/login-choose.png" />
+      </div>
+      <div class="slot-content">
+        <div class="qq-login login-icon" data-type="qq">
+          <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/qq-icon.png" />
+          <span>QQ</span>
+        </div>
+        <div class="wx-login login-icon" data-type="wx">
+          <img src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/wx-icon.png" />
+          <span>微信</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 取消预约确认弹窗 -->
+  <div class="ui-overlay" id="cancel-reserve">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" onclick="comm.reportEvent('btn', 'confirm_again_cancel_reservation_close', '关闭二次确认取消预约')" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">
+        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/overlayTitle/cancelAppointed.png" />
+      </div>
+      <div class="slot-content">
+        <div class="text-content">预约王者万象棋，才能获取游戏上线一手资讯噢~</div>
+        <div class="buttons">
+          <div class="ui-button grey cancel-btn" onclick="index.cancelReserve()">取消预约</div>
+          <div class="ui-button  cancel-btn" onclick="comm.reportEvent('btn', 'confirm_again_cancel_wzxx', '二次确认我再想想')">我再想想</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 取消预约成功弹窗 -->
+  <div class="ui-overlay" id="reserve-cancelled">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">
+        <img src="https://game.gtimg.cn/images/osgame/cp/appointment/overlayTitle/common.png">
+      </div>
+      <div class="slot-content cancel-btn">
+        您已取消预约
+      </div>
+    </div>
+  </div>
+
+  <!-- 预约发布会直播弹窗 -->
+  <div class="ui-overlay" id="receive-live">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">扫码预约发布会直播</div>
+      <div class="slot-content">
+        <img class="dia-code" src="https://game.gtimg.cn/images/osgame/cp/appointment/dia-code.png" alt="">
+        <div class="dia-codebox">
+          <img class="adtag_code" src="https://game.gtimg.cn/images/osgame/cp/appointment/wxQrCode.png"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 直播弹窗 -->
+  <div class="ui-overlay" id="live-video">
+    <div class="ui-overlay-content">
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <p>【直播中】王者万象棋冬季测试直播&ensp;·&ensp;王牌之夜 </p>
+      <div class="video_box">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- 邀请函 -->
+  <div class="ui-overlay" id="letter-dia">
+    <div class="ui-overlay-content">
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="letter_box">
+        <img id="animatedImage" src="https://game.gtimg.cn/images/osgame/cp/appointment/letter/0000.png" alt="">
+        <img id="animatedImage2" style="display: none;" src="https://game.gtimg.cn/images/osgame/cp/appointment/letter/0014.png" alt="">
+        <div class="letter_con">
+          <!-- <div class="letter_text">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/letter-text.png" alt="">
+            <p>&nbsp;</p>
+          </div> -->
+          <!-- Swiper -->
+          <div class="swiper letter_text">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">                
+                <img src="https://game.gtimg.cn/images/osgame/cp/appointment/letter-text.png" alt="">                
+              </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+          <div class="letter_foot">
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+           <a href="javascript:;"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 活动入口弹窗-李白 -->
+  <div class="ui-overlay" id="receive-link">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">王者万象棋</div>
+      <div class="slot-content">
+        <img class="dia-code2" src="https://game.gtimg.cn/images/osgame/cp/appointment/dia-code2.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- 活动入口弹窗-小妲己 -->
+  <div class="ui-overlay" id="receive-link2">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">万象大赛 等你登场</div>
+      <div class="slot-content">
+        <img class="dia-code2" src="https://game.gtimg.cn/images/osgame/cp/appointment/dia-code3.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- 玩法预告弹窗 -->
+  <div class="ui-overlay" id="video-dia">
+    <div class="ui-overlay-content">
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="video_box2">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- 适龄提示弹窗 -->
+  <div class="ui-overlay" id="age-dia">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">适龄提示</div>
+      <div class="slot-content">
+        <p>1.本游戏是一款玩法策略性较强的对战游戏，适用于年满12周岁及以上的用户，建议未成年人在家长监护下使用游戏产品。</p>
+        <p></p>
+        <p>2.本游戏基于架空的故事背景和幻想世界观，清新时尚的风格，画面色彩鲜明、配乐明快，没有设置主体剧情。游戏中部分英雄角色有基于历史的适量改编，不会与现实相混淆。玩法基于一定难度的思维判断，玩家间通过运营资源和排兵布阵进行对战，鼓励玩家通过思考和训练达成目标。游戏中有基于语音和文字的陌生人社交系统，且社交系统的管理遵循相关法律法规。</p>
+        <p></p>
+        <p>3.根据国家相关要求，游戏中有用户实名认证系统，未通过实名认证的用户不可进入游戏；认证为未成年人的用户除周五、周六、周日及法定节假日每日20时至21时外其他时间均不可进入游戏。游戏中部分玩法和道具需要付费。根据腾讯健康系统管理规定，认证为未成年人的用户将接受以下管理：未满12周岁的用户不能付费；12周岁以上未满16周岁的未成年人用户，单次充值金额不得超过50元人民币，每月充值金额累计不得超过200元人民币；16周岁以上的未成年人用户，单次充值金额不得超过100元人民币，每月充值金额累计不得超过400元人民币。</p>
+        <p></p>
+        <p>4.游戏中的对战策略及资源运营有助于锻炼玩家的逻辑思维能力和全局观。在游戏中需要玩家合理运营及分配资源，提升英雄级别，排列棋子阵营来提高阵容的强度以获得对战的胜利。同时对游戏动画、角色设计、服饰搭配等方面结合了众多中华传统文化元素进行现代化创作，能够激起玩家对优秀传统文化的兴趣，增强文化认同感。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 通用弹窗 -->
+  <div class="ui-overlay" id="system-tips">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title"><img src="https://game.gtimg.cn/images/osgame/cp/appointment/overlayTitle/common.png" /></div>
+      <div class="slot-content cancel-btn">
+        系统繁忙，请稍后再试
+      </div>
+    </div>
+  </div>
+
+  <!-- 活动入口弹窗-招募 -->
+  <div class="ui-overlay" id="receive-link3">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">填写招募问卷</div>
+      <div class="slot-content">
+        <img class="dia-code2" src="https://game.gtimg.cn/images/osgame/cp/appointment/dia-code4.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- 活动入口弹窗-参与活动 -->
+  <div class="ui-overlay" id="receive-link4">
+    <div class="ui-overlay-content">
+      <img class="tip-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/tip-icon.png" />
+      <img class="close-icon" src="https://game.gtimg.cn/images/osgame/cp/appointment/reserve-page/close-icon.png" />
+      <div class="overlay-title">参与活动赢资格</div>
+      <div class="slot-content">
+        <div class="codelist">
+          <div class="on">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/pop_code1.png">
+          </div>
+          <div class="">
+            <img src="https://game.gtimg.cn/images/osgame/cp/appointment/pop_code2.png">
+          </div>
+        </div>
+        <img class="dia-code2" src="https://game.gtimg.cn/images/osgame/cp/appointment/dia-code5.png" alt="">
+        <div class="platlist">
+          <a href="javascript:;" class="on" onclick="comm.reportEvent('btn', 'pc_home_zjcs_wxhdm', 'pc端终极测试微信活动码曝光')">
+            <i></i>
+            <span>微信扫码</span>
+          </a>
+          <a href="javascript:;" onclick="comm.reportEvent('btn', 'pc_home_zjcs_qqhdm', 'pc端终极测试QQ活动码曝光')" class="">
+            <i></i>
+            <span>QQ扫码</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- 遮罩 + iframe -->
+  <div class="overlay" id="overlay">
+    <iframe></iframe>
+  </div>
+
+  <!-- <script src="//ossweb-img.qq.com/images/js/title.js"></script> -->
+  <script src="https://game.gtimg.cn/images/js/milo-next/latest/milo.min.js"></script>
+  <script src="https://tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js"></script>
+  <script src="//game.gtimg.cn/images/js/2018foot/foot.js"></script>  
+  <script src="//ossweb-img.qq.com/images/js/comm/showDialog.min.js"></script>
+  <script src="//ossweb-img.qq.com/images/js/jquery/jquery-1.11.3.min.js"></script>
+  <script src="//ossweb-img.qq.com/images/js/jquery/jquery.fullPage.2.9.4.min.js"></script>    
+  <script src="https://vm.gtimg.cn/thumbplayer/superplayer/superplayer.js"></script>
+  <script type="text/javascript" src="https://tiem-cdn.qq.com/slugteam/sdk/browser_adapt.js"></script>
+  <!-- <script src="/cp/appointment/js/spritespin.js"></script> -->
+  
+ <script src="/cp/appointment/js/swiper-bundle.min.js"></script>
+  <script src="/cp/appointment/js/preloadjs.min.js"></script>
+  <script src="/cp/appointment/js/md5.js"></script>
+  <script src="/cp/appointment/js/comm_pc.js?v=1.3"></script>
+  <script src="/cp/appointment/js/ui.js"></script>
+  <script src="/cp/appointment/js/comm.js"></script>
+  <script src="/cp/appointment/js/index.js"></script>
+  
+<!-- <script src="./js/swiper-bundle.min.js"></script>
+  <script src="./js/preloadjs.min.js"></script>
+  <script src="./js/md5.js"></script>
+  <script src="./js/comm_pc.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/comm.js"></script>
+  <script src="./js/index.js"></script> -->
+
+  <script>
+    
+    $('.kv_back').click(function(){
+      if (typeof(customBrowserInterface) == "object") {
+        customBrowserInterface.closeWebview();
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+<!-- 埋点统计 -->
+<script src="//ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+<script>
+    //此段代码不能放到外链JS中，
+    var setSite = {
+        //设置网站属性
+        siteType: 'os', //必填项:"os"代表是官网，如果不是，则填写actName例如a20160701xxx
+        pageType: 'index', //必填项:本页面的定位；按照页面含义填写例如main||list||detail||download||share||page1||pageN,不支持点(.)、下划线(_)
+        pageName: '官网PC首页', //必填项:页面中文名
+        project: 'base', //选填项:如果是官网模块则是必填;按照模块内容，填写固定的对应值;官网微社区base;同人站doujin;赛事match;故事站story;文化站history;粉丝站fans;爆料站coming;论坛bbs;皮肤skin;默认other;
+        osact: 'pc', //选填项:默认是0。osact=0表示非官网专题；osact=pc表示pc官网/pc官网专题；osact=m表示移动官网/移动官网专题；osact=ingame表示微社区/微社区专题
+    };
+    if (typeof pgvMain == 'function') pgvMain(); //千万不能忘记！
+</script>
