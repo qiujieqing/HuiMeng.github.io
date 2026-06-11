@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>温煞 - 家族系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- 全局重置与基础样式 --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f8fa; color: #333; height: 100vh; overflow: hidden;
+            display: flex; flex-direction: column; max-width: 500px; margin: 0 auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1); position: relative;
+        }
+        /* --- 顶部标题栏 --- */
+        .header {
+            height: 50px; background-color: #fff; display: flex; align-items: center; justify-content: center;
+            position: relative; z-index: 10; box-shadow: 0 1px 2px rgba(0,0,0,0.05); flex-shrink: 0;
+        }
+        .header h1 { font-size: 18px; font-weight: 600; color: #333; }
+        .header-menu { position: absolute; left: 15px; color: #ff5e95; font-size: 20px; cursor: pointer; }
+        /* --- 主内容区域 --- */
+        .main-container { flex: 1; overflow-y: auto; position: relative; }
+        .page { display: none; min-height: 100%; animation: fadeIn 0.3s ease; padding-bottom: 20px; }
+        .page.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        /* --- 1. 主页样式 --- */
+        .banner {
+            margin: 15px; height: 140px; background: linear-gradient(90deg, #a2d9ff 0%, #ff9eb5 100%);
+            border-radius: 12px; position: relative; overflow: hidden; display: flex; align-items: center; padding-left: 20px;
+        }
+        .banner-text h2 { font-size: 14px; color: #d6336c; margin-bottom: 5px; }
+        .banner-text h1 { font-size: 32px; color: #fff; font-weight: bold; letter-spacing: 2px; margin-bottom: 5px; }
+        .banner-text p { font-size: 12px; color: #fff; opacity: 0.9; }
+        .banner-icon {
+            position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+            width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 40px; color: #fff;
+        }
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 15px 20px 15px; }
+        .card {
+            background: #fff; border-radius: 12px; padding: 20px 15px; display: flex; flex-direction: column;
+            align-items: center; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.02); cursor: pointer; transition: 0.2s;
+        }
+        .card:active { transform: scale(0.98); background-color: #fafafa; }
+        .card.green { background-color: #e6f7ee; } 
+        .card.blue { background-color: #e6f4fa; } 
+        .card.yellow { background-color: #fcf6e5; }
+        .card-icon { margin-bottom: 15px; font-size: 36px; color: #ff5e5e; }
+        .card h3 { font-size: 16px; margin-bottom: 5px; color: #333; }
+        .card p { font-size: 12px; color: #999; }
+        /* --- 2. 空状态居中样式 --- */
+        .placeholder-page { 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            height: 100%; color: #999; 
+        }
+        .placeholder-page i { font-size: 60px; margin-bottom: 20px; color: #ddd; }
+        .placeholder-page h2 { font-size: 20px; margin-bottom: 10px; color: #666; }
+        /* --- 3. 全屏文档编辑器 --- */
+        .doc-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff;
+            z-index: 999; display: none; flex-direction: column; animation: fadeIn 0.2s ease;
+        }
+        .doc-header {
+            padding: 15px 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+        }
+        .doc-header h3 { font-size: 18px; font-weight: 600; }
+        .doc-close { font-size: 20px; color: #999; cursor: pointer; padding: 5px; }
+        .doc-toolbar {
+            padding: 10px 20px; border-bottom: 1px solid #eee; display: flex; gap: 15px; align-items: center; flex-shrink: 0; overflow-x: auto;
+        }
+        .doc-toolbar select, .doc-toolbar button {
+            padding: 6px 10px; border: 1px solid #ddd; border-radius: 6px; background: #fff; font-size: 14px; cursor: pointer;
+        }
+        .doc-body { flex: 1; padding: 20px; overflow-y: auto; outline: none; font-size: 16px; line-height: 1.8; }
+        .doc-footer { padding: 15px 20px; border-top: 1px solid #eee; flex-shrink: 0; }
+        .save-btn {
+            width: 100%; padding: 14px; background-color: #3b82f6; color: #fff; border: none; border-radius: 10px;
+            font-size: 16px; font-weight: 500; cursor: pointer;
+        }
+        /* --- 4. 登录/注册弹窗 --- */
+        .auth-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);
+            z-index: 1000; display: flex; align-items: center; justify-content: center;
+        }
+        .auth-panel {
+            background: #fff; width: 85%; max-width: 350px; border-radius: 15px; padding: 30px 20px;
+        }
+        .auth-panel h2 { text-align: center; margin-bottom: 20px; color: #333; }
+        .auth-input {
+            width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; outline: none;
+        }
+        .auth-input:focus { border-color: #3b82f6; }
+        .auth-btn {
+            width: 100%; padding: 14px; background-color: #ff5e95; color: #fff; border: none; border-radius: 8px;
+            font-size: 16px; cursor: pointer; margin-bottom: 10px;
+        }
+        .auth-switch { text-align: center; font-size: 14px; color: #3b82f6; cursor: pointer; }
+        .avatar-upload { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; cursor: pointer; }
+        .avatar-preview { width: 60px; height: 60px; border-radius: 50%; background: #eee; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .avatar-preview img { width: 100%; height: 100%; object-fit: cover; }
+        /* --- 5. 论坛帖子样式 --- */
+        .post-card { background: #fff; margin-bottom: 10px; padding: 15px; }
+        .post-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .post-avatar { width: 40px; height: 40px; border-radius: 50%; background: #ddd; overflow: hidden; }
+        .post-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .post-info h4 { font-size: 15px; color: #333; }
+        .post-info span { font-size: 12px; color: #999; }
+        .post-content { font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
+        .post-actions { display: flex; gap: 20px; color: #999; font-size: 14px; cursor: pointer; }
+        .reply-box { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #eee; }
+        .reply-item { background: #f9f9f9; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px; font-size: 13px; }
+        .reply-item strong { color: #3b82f6; margin-right: 5px; }
+        .reply-input-wrap { display: flex; gap: 10px; margin-top: 10px; }
+        .reply-input-wrap input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 6px; outline: none; font-size: 14px; }
+        .reply-input-wrap button { padding: 8px 15px; background: #3b82f6; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+        /* --- 6. 底部导航栏 (Tab Bar) --- */
+        .tab-bar {
+            height: 60px; background-color: #fff; display: flex; justify-content: space-around; align-items: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.03); flex-shrink: 0; z-index: 100;
+        }
+        .tab-item {
+            flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: #999; font-size: 10px; cursor: pointer; transition: color 0.2s; height: 100%; gap: 4px;
+        }
+        .tab-item i { font-size: 20px; }
+        .tab-item.active { color: #3b82f6; }
+    </style>
+</head>
+<body>
+    <!-- 登录/注册弹窗 -->
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-panel">
+            <h2 id="authTitle">登录温煞</h2>
+            <div class="avatar-upload" onclick="document.getElementById('avatarInput').click()">
+                <div class="avatar-preview" id="avatarPreview"><i class="fa-solid fa-user" style="font-size:24px;color:#ccc;"></i></div>
+                <span style="color:#3b82f6; font-size:14px;">点击上传头像</span>
+                <input type="file" id="avatarInput" accept="image/*" style="display:none;">
+            </div>
+            <input type="text" id="authUsername" class="auth-input" placeholder="请输入账号">
+            <input type="password" id="authPassword" class="auth-input" placeholder="请输入密码">
+            <button class="auth-btn" id="authBtn" onclick="handleAuth()">登录</button>
+            <div class="auth-switch" id="authSwitch" onclick="toggleAuthMode()">没有账号？去注册</div>
+        </div>
+    </div>
+
+    <!-- 顶部标题栏 -->
+    <header class="header">
+        <div class="header-menu" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></div>
+        <h1 id="pageTitle">首页</h1>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="main-container">
+        <!-- 1. 主页 -->
+        <section id="page-home" class="page active">
+            <div class="banner">
+                <div class="banner-text">
+                    <h2>我们是</h2>
+                    <h1>温煞</h1>
+                    <p>爱我中国净化家族</p>
+                </div>
+                <div class="banner-icon"><i class="fa-solid fa-earth-asia"></i></div>
+            </div>
+            <div class="grid-container">
+                <div class="card green" onclick="openDoc('温煞神族')">
+                    <div class="card-icon"><i class="fa-solid fa-fire"></i></div>
+                    <h3>温煞神族</h3>
+                    <p>点击编辑文档</p>
+                </div>
+                <div class="card blue" onclick="openDoc('月煞阁')">
+                    <div class="card-icon"><i class="fa-solid fa-moon"></i></div>
+                    <h3>月煞阁</h3>
+                    <p>点击编辑文档</p>
+                </div>
+                <div class="card yellow" onclick="openDoc('月煞殿')">
+                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                    <h3>月煞殿</h3>
+                    <p>点击编辑文档</p>
+                </div>
+                <div class="card green" onclick="openDoc('风澈阁')">
+                    <div class="card-icon"><i class="fa-solid fa-wind"></i></div>
+                    <h3>风澈阁</h3>
+                    <p>点击编辑文档</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 公告 -->
+        <section id="page-notice" class="page">
+            <div class="placeholder-page">
+                <i class="fa-solid fa-bullhorn"></i>
+                <h2>家族公告</h2>
+                <p>暂无最新公告</p>
+            </div>
+        </section>
+
+        <!-- 3. 论坛 -->
+        <section id="page-forum" class="page">
+            <div style="padding:15px; background:#fff; margin-bottom:10px;">
+                <textarea id="newPostContent" placeholder="分享你的新鲜事..." style="width:100%; height:60px; border:1px solid #eee; border-radius:8px; padding:10px; outline:none; resize:none; font-size:14px;"></textarea>
+                <button onclick="publishPost()" style="margin-top:10px; width:100%; padding:10px; background:#ff5e95; color:#fff; border:none; border-radius:8px; font-size:15px; cursor:pointer;">发布帖子</button>
+            </div>
+            <div id="postList"></div>
+        </section>
+
+        <!-- 4. 我的 -->
+        <section id="page-my" class="page">
+            <div style="background:#fff; padding:30px; display:flex; flex-direction:column; align-items:center;">
+                <div id="myAvatar" style="width:80px; height:80px; border-radius:50%; background:#eee; overflow:hidden; margin-bottom:15px; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-user" style="font-size:40px; color:#ccc;"></i>
+                </div>
+                <h2 id="myUsername" style="margin-bottom:5px;">未登录</h2>
+                <p style="color:#999; font-size:14px;">欢迎回到温煞家族</p>
+            </div>
+        </section>
+
+        <!-- 5. 联系人 -->
+        <section id="page-contact" class="page">
+            <div class="placeholder-page">
+                <i class="fa-solid fa-address-book"></i>
+                <h2>我的联系人</h2>
+                <p>家族成员列表</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 全屏文档编辑器 -->
+    <div class="doc-overlay" id="docOverlay">
+        <div class="doc-header">
+            <h3 id="docTitle">文档标题</h3>
+            <div class="doc-close" onclick="closeDoc()"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="doc-toolbar">
+            <select onchange="formatDoc('fontSize', this.value)">
+                <option value="3">正文字号</option>
+                <option value="1">极小</option>
+                <option value="2">较小</option>
+                <option value="4">较大</option>
+                <option value="5">极大</option>
+            </select>
+            <button onclick="formatDoc('bold')"><i class="fa-solid fa-bold"></i> 加粗</button>
+            <button onclick="formatDoc('italic')"><i class="fa-solid fa-italic"></i> 斜体</button>
+            <select onchange="formatDoc('foreColor', this.value)">
+                <option value="#333">主题颜色</option>
+                <option value="#ff5e95">粉色</option>
+                <option value="#3b82f6">蓝色</option>
+                <option value="#10b981">绿色</option>
+            </select>
+        </div>
+        <div class="doc-body" id="docBody" contenteditable="true"></div>
+        <div class="doc-footer">
+            <button class="save-btn" onclick="saveDoc()">保存文档</button>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <nav class="tab-bar">
+        <div class="tab-item active" onclick="switchTab('home', this)"><i class="fa-solid fa-house"></i><span>主页</span></div>
+        <div class="tab-item" onclick="switchTab('notice', this)"><i class="fa-solid fa-bullhorn"></i><span>公告</span></div>
+        <div class="tab-item" onclick="switchTab('forum', this)"><i class="fa-solid fa-comments"></i><span>论坛</span></div>
+        <div class="tab-item" onclick="switchTab('my', this)"><i class="fa-solid fa-user"></i><span>我的</span></div>
+        <div class="tab-item" onclick="switchTab('contact', this)"><i class="fa-solid fa-address-book"></i><span>联系人</span></div>
+    </nav>
+
+    <script>
+        // --- 1. 用户系统逻辑 ---
+        let isLoginMode = true;
+        let currentUser = JSON.parse(localStorage.getItem('wensha_user')) || null;
+        let tempAvatar = '';
+        let currentDocKey = '';
+
+        // 头像上传预览
+        document.getElementById('avatarInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    tempAvatar = ev.target.result;
+                    const preview = document.getElementById('avatarPreview');
+                    preview.innerHTML = `<img src="${tempAvatar}" alt="头像">`;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 切换登录/注册模式
+        function toggleAuthMode() {
+            isLoginMode = !isLoginMode;
+            const title = document.getElementById('authTitle');
+            const btn = document.getElementById('authBtn');
+            const switchTxt = document.getElementById('authSwitch');
+            if(isLoginMode){
+                title.innerText = "登录温煞";
+                btn.innerText = "登录";
+                switchTxt.innerText = "没有账号？去注册";
+            } else {
+                title.innerText = "注册账号";
+                btn.innerText = "注册";
+                switchTxt.innerText = "已有账号？去登录";
+            }
+        }
+
+        // 登录/注册处理
+        function handleAuth() {
+            const uname = document.getElementById('authUsername').value.trim();
+            const pwd = document.getElementById('authPassword').value.trim();
+            if(!uname || !pwd){
+                alert("请输入账号和密码");
+                return;
+            }
+            if(!isLoginMode){
+                // 注册
+                localStorage.setItem('wensha_reg_' + uname, pwd);
+                alert("注册成功，请登录！");
+                toggleAuthMode();
+                return;
+            }
+            // 登录校验
+            const regPwd = localStorage.getItem('wensha_reg_' + uname);
+            if(regPwd !== pwd){
+                alert("账号或密码错误");
+                return;
+            }
+            currentUser = {
+                username: uname,
+                avatar: tempAvatar
+            };
+            localStorage.setItem('wensha_user', JSON.stringify(currentUser));
+            document.getElementById('authOverlay').style.display = 'none';
+            refreshUserInfo();
+            alert("登录成功！");
+        }
+
+        // 退出登录
+        function logout() {
+            if(!currentUser) return;
+            localStorage.removeItem('wensha_user');
+            currentUser = null;
+            refreshUserInfo();
+            document.getElementById('authOverlay').style.display = 'flex';
+        }
+
+        // 刷新个人信息
+        function refreshUserInfo() {
+            const myAvatar = document.getElementById('myAvatar');
+            const myName = document.getElementById('myUsername');
+            if(currentUser){
+                if(currentUser.avatar){
+                    myAvatar.innerHTML = `<img src="${currentUser.avatar}" style="width:100%;height:100%;object-fit:cover;">`;
+                } else {
+                    myAvatar.innerHTML = `<i class="fa-solid fa-user" style="font-size:40px; color:#ccc;"></i>`;
+                }
+                myName.innerText = currentUser.username;
+            } else {
+                myAvatar.innerHTML = `<i class="fa-solid fa-user" style="font-size:40px; color:#ccc;"></i>`;
+                myName.innerText = "未登录";
+            }
+            renderPostList();
+        }
+
+        // 初始化登录弹窗显示
+        window.onload = function(){
+            if(!currentUser){
+                document.getElementById('authOverlay').style.display = 'flex';
+            }
+            refreshUserInfo();
+        };
+
+        // --- 2. 底部页面切换 ---
+        const pageTitleMap = {
+            home: '首页', notice: '公告', forum: '论坛', my: '我的', contact: '联系人'
+        };
+        function switchTab(pageId, element) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            element.classList.add('active');
+            document.getElementById('pageTitle').innerText = pageTitleMap[pageId] || '首页';
+        }
+
+        // --- 3. 文档编辑器 ---
+        function openDoc(docName) {
+            currentDocKey = docName;
+            document.getElementById('docTitle').innerText = docName + ' - 文档编辑';
+            const content = localStorage.getItem('doc_' + docName) || '';
+            document.getElementById('docBody').innerHTML = content;
+            document.getElementById('docOverlay').style.display = 'flex';
+        }
+        function closeDoc() {
+            document.getElementById('docOverlay').style.display = 'none';
+        }
+        function saveDoc() {
+            const html = document.getElementById('docBody').innerHTML;
+            localStorage.setItem('doc_' + currentDocKey, html);
+            alert("文档保存成功！");
+            closeDoc();
+        }
+        function formatDoc(cmd, val) {
+            if(val) document.execCommand(cmd, false, val);
+            else document.execCommand(cmd, false, null);
+        }
+
+        // --- 4. 论坛帖子功能 ---
+        function publishPost() {
+            if(!currentUser){
+                alert("请先登录！");
+                return;
+            }
+            const content = document.getElementById('newPostContent').value.trim();
+            if(!content){
+                alert("请输入帖子内容");
+                return;
+            }
+            let postList = JSON.parse(localStorage.getItem('forum_posts')) || [];
+            const newPost = {
+                id: Date.now(),
+                username: currentUser.username,
+                avatar: currentUser.avatar,
+                content: content,
+                time: new Date().toLocaleString(),
+                reply: []
+            };
+            postList.unshift(newPost);
+            localStorage.setItem('forum_posts', JSON.stringify(postList));
+            document.getElementById('newPostContent').value = '';
+            renderPostList();
+        }
+
+        function renderPostList() {
+            const postWrap = document.getElementById('postList');
+            const postList = JSON.parse(localStorage.getItem('forum_posts')) || [];
+            let html = '';
+            postList.forEach(post => {
+                let replyHtml = '';
+                post.reply.forEach(r => {
+                    replyHtml += `<div class="reply-item"><strong>${r.uname}</strong>${r.content}</div>`;
+                });
+                html += `
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-avatar">
+                            ${post.avatar ? `<img src="${post.avatar}">` : '<i class="fa-solid fa-user" style="color:#ccc;"></i>'}
+                        </div>
+                        <div class="post-info">
+                            <h4>${post.username}</h4>
+                            <span>${post.time}</span>
+                        </div>
+                    </div>
+                    <div class="post-content">${post.content}</div>
+                    <div class="reply-box">
+                        ${replyHtml}
+                        <div class="reply-input-wrap">
+                            <input type="text" placeholder="写下回复..." id="reply_${post.id}">
+                            <button onclick="addReply(${post.id})">回复</button>
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+            postWrap.innerHTML = html;
+        }
+
+        function addReply(pid) {
+            if(!currentUser){
+                alert("请先登录！");
+                return;
+            }
+            const input = document.getElementById('reply_' + pid);
+            const txt = input.value.trim();
+            if(!txt) return;
+            let postList = JSON.parse(localStorage.getItem('forum_posts')) || [];
+            for(let i=0; i<postList.length; i++){
+                if(postList[i].id === pid){
+                    postList[i].reply.push({
+                        uname: currentUser.username,
+                        content: txt
+                    });
+                    break;
+                }
+            }
+            localStorage.setItem('forum_posts', JSON.stringify(postList));
+            renderPostList();
+        }
+    </script>
+</body>
+</html>
