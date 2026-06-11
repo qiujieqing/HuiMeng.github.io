@@ -11,9 +11,18 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #f7f8fa; color: #333; height: 100vh; overflow: hidden;
-            display: flex; flex-direction: column; max-width: 500px; margin: 0 auto;
+            display: flex; flex-direction: column; margin: 0 auto;
             box-shadow: 0 0 15px rgba(0,0,0,0.1); position: relative;
         }
+        
+        /* --- 电脑版适配 --- */
+        @media (min-width: 600px) {
+            body {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        
         /* --- 顶部标题栏 --- */
         .header {
             height: 50px; background-color: #fff; display: flex; align-items: center; justify-content: center;
@@ -118,15 +127,29 @@
         .reply-input-wrap button { padding: 8px 15px; background: #3b82f6; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
         /* --- 6. 底部导航栏 (Tab Bar) --- */
         .tab-bar {
-            height: 60px; background-color: #fff; display: flex; justify-content: space-around; align-items: center;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.03); flex-shrink: 0; z-index: 100;
+            height: auto; min-height: 70px; background-color: #fff; display: flex; justify-content: space-around; align-items: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.03); flex-shrink: 0; z-index: 100; padding: 8px 0;
         }
         .tab-item {
             flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            color: #999; font-size: 10px; cursor: pointer; transition: color 0.2s; height: 100%; gap: 4px;
+            color: #999; font-size: 11px; cursor: pointer; transition: color 0.2s; height: 100%; gap: 6px;
+            padding: 8px 0;
         }
         .tab-item i { font-size: 20px; }
         .tab-item.active { color: #3b82f6; }
+        
+        /* --- 电脑版 Tab Bar 优化 --- */
+        @media (min-width: 600px) {
+            .tab-bar {
+                min-height: 60px;
+                padding: 5px 0;
+            }
+            .tab-item {
+                font-size: 12px;
+                gap: 4px;
+                padding: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
