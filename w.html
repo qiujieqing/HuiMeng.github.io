@@ -200,13 +200,22 @@
         <!-- 3. 论坛 -->
         <section id="page-forum" class="page">
             <div style="padding:15px; background:#fff; margin-bottom:10px;">
-                <textarea id="newPostContent" placeholder="分享你的新鲜事..." style="width:100%; height:60px; border:1px solid #eee; border-radius:8px; padding:10px; outline:none; resize:none; font-size:14px;"></textarea>
-                <button onclick="publishPost()" style="margin-top:10px; width:100%; padding:10px; background:#ff5e95; color:#fff; border:none; border-radius:8px; font-size:15px; cursor:pointer;">发布帖子</button>
+                <textarea id="newPostContent" placeholder="分享你的新鲜事..." style="width:100%; height:60px; border:1px solid #eee; border-radius:8px; padding:10px; outline:none; resize:none;"></textarea>
+                <button onclick="publishPost()" style="margin-top:10px; width:100%; padding:10px; background:#ff5e95; color:#fff; border:none; border-radius:8px; font-size:15px; cursor:pointer;">发布</button>
             </div>
             <div id="postList"></div>
         </section>
 
-        <!-- 4. 我的 -->
+        <!-- 4. 消息 -->
+        <section id="page-message" class="page">
+            <div class="placeholder-page">
+                <i class="fa-solid fa-envelope"></i>
+                <h2>我的消息</h2>
+                <p>暂无消息</p>
+            </div>
+        </section>
+
+        <!-- 5. 我的 -->
         <section id="page-my" class="page">
             <div style="background:#fff; padding:30px; display:flex; flex-direction:column; align-items:center;">
                 <div id="myAvatar" style="width:80px; height:80px; border-radius:50%; background:#eee; overflow:hidden; margin-bottom:15px; display:flex; align-items:center; justify-content:center;">
@@ -214,15 +223,6 @@
                 </div>
                 <h2 id="myUsername" style="margin-bottom:5px;">未登录</h2>
                 <p style="color:#999; font-size:14px;">欢迎回到温煞家族</p>
-            </div>
-        </section>
-
-        <!-- 5. 联系人 -->
-        <section id="page-contact" class="page">
-            <div class="placeholder-page">
-                <i class="fa-solid fa-address-book"></i>
-                <h2>我的联系人</h2>
-                <p>家族成员列表</p>
             </div>
         </section>
     </main>
@@ -261,8 +261,8 @@
         <div class="tab-item active" onclick="switchTab('home', this)"><i class="fa-solid fa-house"></i><span>主页</span></div>
         <div class="tab-item" onclick="switchTab('notice', this)"><i class="fa-solid fa-bullhorn"></i><span>公告</span></div>
         <div class="tab-item" onclick="switchTab('forum', this)"><i class="fa-solid fa-comments"></i><span>论坛</span></div>
+        <div class="tab-item" onclick="switchTab('message', this)"><i class="fa-solid fa-envelope"></i><span>消息</span></div>
         <div class="tab-item" onclick="switchTab('my', this)"><i class="fa-solid fa-user"></i><span>我的</span></div>
-        <div class="tab-item" onclick="switchTab('contact', this)"><i class="fa-solid fa-address-book"></i><span>联系人</span></div>
     </nav>
 
     <script>
@@ -371,7 +371,7 @@
 
         // --- 2. 底部页面切换 ---
         const pageTitleMap = {
-            home: '首页', notice: '公告', forum: '论坛', my: '我的', contact: '联系人'
+            home: '首页', notice: '公告', forum: '论坛', message: '消息', my: '我的'
         };
         function switchTab(pageId, element) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
