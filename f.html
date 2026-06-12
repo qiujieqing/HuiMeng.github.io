@@ -332,7 +332,7 @@
   .trending-item:nth-child(1) .trending-rank{background:var(--accent);color:#fff}
   .trending-item:nth-child(2) .trending-rank{background:var(--pink);color:#fff}
   .trending-item:nth-child(3) .trending-rank{background:var(--green);color:#fff}
-  .trending-text{font-size:13px;font-weight:500;line-height:1.4}
+  .trending-text{font-size:13px;font-weight:500;line-height:1.4;cursor:pointer}
   .trending-text:hover{color:var(--accent)}
   .trending-count{font-size:11px;color:var(--text-muted);margin-top:2px}
 
@@ -461,15 +461,15 @@
     display:flex;align-items:center;justify-content:center;
     margin:0 auto 16px;
   }
-  .confirm-icon svg{color:var(--red)}
+  .confirm-icon svg{color:var(--red);width:28px;height:28px}
   .confirm-icon.grant{background:rgba(108,92,231,.1)}
   .confirm-icon.grant svg{color:var(--accent)}
   .confirm-dialog h3{font-size:17px;font-weight:700;margin-bottom:8px}
   .confirm-dialog p{font-size:14px;color:var(--text-secondary);margin-bottom:24px}
   .confirm-actions{display:flex;gap:10px;justify-content:center}
-  .btn-confirm-delete{background:var(--red);color:#fff;padding:10px 28px;border-radius:8px;font-weight:600;transition:var(--transition)}
+  .btn-confirm-delete{background:var(--red);color:#fff;padding:10px 28px;border-radius:8px;font-weight:600;transition:var(--transition);cursor:pointer}
   .btn-confirm-delete:hover{background:#d35400}
-  .btn-confirm-grant{background:var(--accent);color:#fff;padding:10px 28px;border-radius:8px;font-weight:600;transition:var(--transition)}
+  .btn-confirm-grant{background:var(--accent);color:#fff;padding:10px 28px;border-radius:8px;font-weight:600;transition:var(--transition);cursor:pointer}
   .btn-confirm-grant:hover{background:#5b4bd5}
 
   /* ===== CATEGORY MANAGE MODAL ===== */
@@ -494,6 +494,7 @@
     width:28px;height:28px;border-radius:6px;
     display:flex;align-items:center;justify-content:center;
     transition:var(--transition);
+    cursor:pointer;
   }
   .cat-manage-btn:hover{background:var(--bg-hover)}
   .cat-manage-btn.del:hover{background:rgba(225,112,85,.1);color:var(--red)}
@@ -777,7 +778,7 @@ const avatarColors = [
 const otherUsers = [
   {name:'林小溪',initial:'林',g:1,avatar:null,admin:false},
   {name:'CodeMaster',initial:'C',g:2,avatar:null,admin:false},
-  {name:'AI探索者',initial:'A',g:3,avatar:null,admin:false},
+  {name:'AI探索��',initial:'A',g:3,avatar:null,admin:false},
   {name:'设计达人',initial:'设',g:4,avatar:null,admin:false},
   {name:'前端小王子',initial:'前',g:5,avatar:null,admin:false},
   {name:'数据科学家',initial:'数',g:6,avatar:null,admin:false},
@@ -789,10 +790,8 @@ const otherUsers = [
   {name:'测试工程师',initial:'测',g:2,avatar:null,admin:false},
 ];
 
-// Current user
 let currentUser = {name:'',initial:'',g:0,avatar:null,admin:false};
 
-// Categories
 let categories = [
   {id:'all',label:'全部',cls:'tag-tech',builtin:true},
   {id:'tech',label:'技术讨论',cls:'tag-tech'},
@@ -811,14 +810,14 @@ function rebuildCategoryMap(){
 rebuildCategoryMap();
 
 let threads = [
-  {id:1,user:-1,category:'ai',title:'GPT-5 技术前瞻：多模态推理能力的突破与局限',excerpt:'从最新论文和泄露信息来看，GPT-5 将在多模态推理方面带来质的飞跃。但真正的 AGI 还有多远？本文从技术角度深入分析...',time:'12分钟前',replies:234,likes:567,views:3420,pinned:true},
-  {id:2,user:-2,category:'tech',title:'2026 年前端技术栈选型：我为什么从 React 迁移到了 SolidJS',excerpt:'经过半年的实际项目验证，SolidJS 在性能和开发体验上都给了我惊喜。细粒度响应式更新确实比虚拟 DOM 更高效...',time:'28分钟前',replies:189,likes:423,views:2890},
-  {id:3,user:-3,category:'ai',title:'用 LangChain + RAG 搭建企业级知识库，踩坑全记录',excerpt:'从文档解析、向量数据库选型到检索优化，完整记录了一个企业知识库项目从 0 到 1 的全过程。包含大量实战代码...',time:'1小时前',replies:156,likes:389,views:2150},
-  {id:4,user:-4,category:'design',title:'Figma 2026 新功能解读：AI 驱动的设计系统自动化',excerpt:'Figma 最新发布的 AI 功能可以自动生成设计 Token、组件变体和响应式布局。设计师的工作方式正在被重新定义...',time:'2小时前',replies:98,likes:276,views:1680},
-  {id:5,user:-5,category:'tech',title:'TypeScript 6.0 新特性：装饰器终于稳定了！',excerpt:'经过多个版本的迭代，TypeScript 装饰器规范终于稳定下来。这意味着 Angular、NestJS 等框架将迎来更好的开发体验...',time:'3小时前',replies:145,likes:312,views:1920},
-  {id:6,user:-6,category:'career',title:'从初级开发到技术负责人，我用了 5 年（附成长路线）',excerpt:'回顾过去 5 年的技术成长之路，总结了每个阶段的关键决策、学习方法和避坑指南。希望能给正在迷茫的你一些启发...',time:'4小时前',replies:267,likes:891,views:5670},
-  {id:7,user:-7,category:'tech',title:'Docker 替代方案？Podman 在生产环境的真实体验',excerpt:'在三个生产项目中使用 Podman 替代 Docker 半年后，来分享一下真实的使用感受。无守护进程架构确实带来了不少好处...',time:'5小时前',replies:87,likes:198,views:1340},
-  {id:8,user:-8,category:'chat',title:'大家平时都用什么机械键盘？求推荐一款适合编程的',excerpt:'最近想换一把机械键盘，主要用来写代码。预算 500-1000，偏好红轴或茶轴，最好支持热插拔。大家有什么推荐？',time:'6小时前',replies:312,likes:156,views:2890},
+  {id:1,user:-1,category:'ai',title:'GPT-5 技术前瞻：多模态推理能力的突破与局限',excerpt:'从最新论文和泄露信息来看，GPT-5 将在多模态推理方面带来质的飞跃...',replies:142,likes:328,views:2840,time:'2小时前'},
+  {id:2,user:-2,category:'tech',title:'2026 年前端技术栈选型：我为什么从 React 迁移到了 SolidJS',excerpt:'经过半年的实际项目验证，SolidJS 在性能和开发体验上都表现出色...',replies:89,likes:215,views:1923,time:'4小时前'},
+  {id:3,user:-3,category:'ai',title:'用 LangChain + RAG 搭建企业级知识库，踩坑全记录',excerpt:'从文档解析、向量数据库选型到检索优化，完整记录了一个企业知识库...',replies:76,likes:198,views:1654,time:'6小时前'},
+  {id:4,user:-4,category:'design',title:'Figma 2026 新功能解读：AI 驱动的设计系统自动化',excerpt:'Figma 最新发布的 AI 功能可以自动生成设计 Token、组件变体和响应式布局...',replies:54,likes:167,views:1289,time:'8小时前'},
+  {id:5,user:-5,category:'tech',title:'TypeScript 6.0 新特性：装饰器终于稳定了！',excerpt:'经过多个版本的迭代，TypeScript 装饰器规范终于稳定下来。这意味着 Angular...',replies:102,likes:276,views:2156,time:'10小时前'},
+  {id:6,user:-6,category:'career',title:'从初级开发到技术负责人，我用了 5 年（附成长路线）',excerpt:'回顾过去 5 年的技术成长之路，总结了每个阶段的关键决策和学习重点...',replies:213,likes:542,views:4521,time:'12小时前'},
+  {id:7,user:-7,category:'tech',title:'Docker 替代方案？Podman 在生产环境的真实体验',excerpt:'在三个生产项目中使用 Podman 替代 Docker 半年后，来分享一下真实的使用感受...',replies:67,likes:154,views:1432,time:'14小时前'},
+  {id:8,user:-8,category:'chat',title:'大家平时都用什么机械键盘？求推荐一款适合编程的',excerpt:'最近想换一把机械键盘，主要用来写代码。预算 500-1000，偏好青轴或红轴...',replies:234,likes:89,views:2341,time:'16小时前'},
 ];
 
 let currentFilter = 'all';
@@ -837,6 +836,7 @@ function handleOnboardAvatar(e){
     const img = document.getElementById('onboardAvatarImg');
     img.src = ev.target.result;
     document.getElementById('onboardAvatarUpload').classList.add('has-image');
+    checkOnboardReady();
   };
   reader.readAsDataURL(file);
 }
@@ -852,7 +852,7 @@ function enterForum(){
   if(!name || !currentUser.avatar) return;
   currentUser.name = name;
   currentUser.initial = name.charAt(0);
-  // 云亦 is the supreme admin
+  currentUser.g = Math.floor(Math.random() * avatarColors.length);
   if(name === '云亦'){
     currentUser.admin = true;
   }
@@ -863,6 +863,7 @@ function enterForum(){
   renderThreads();
   renderOnlineUsers();
   updateCategorySelect();
+  renderColorPicker();
 }
 
 // ===== HELPERS =====
@@ -878,7 +879,7 @@ function isAdmin(user){
 function getAvatarHTML(user, clickable){
   const s = 48;
   const crown = isAdmin(user) ? '<div class="admin-crown">👑</div>' : '';
-  const clickAttr = clickable !== false ? `onclick="onAvatarClick('${user.name}')"` : '';
+  const clickAttr = clickable !== false && user !== currentUser ? `onclick="onAvatarClick('${user.name}')"` : '';
   if(user.avatar){
     return `<div class="thread-avatar" style="width:${s}px;height:${s}px" ${clickAttr}><img src="${user.avatar}" alt="${user.name}">${crown}</div>`;
   }
@@ -894,14 +895,13 @@ function getOnlineAvatarHTML(user){
 
 // ===== AVATAR CLICK - GRANT/REVOKE ADMIN =====
 function onAvatarClick(name){
-  if(name === currentUser.name) return; // can't toggle self
-  // Find the user
+  if(name === currentUser.name) return;
+  if(!currentUser.admin) return;
   let target = otherUsers.find(u => u.name === name);
   if(!target) return;
 
   const isCurrentlyAdmin = isAdmin(target);
   const action = isCurrentlyAdmin ? '撤销' : '授予';
-  const actionEn = isCurrentlyAdmin ? 'revoke' : 'grant';
 
   document.getElementById('confirmTitle').textContent = `${action}管理员权限`;
   document.getElementById('confirmText').textContent = `确定要${action}「${name}」的管理员权限吗？`;
@@ -934,9 +934,7 @@ function renderCategories(){
   const container = document.getElementById('categoryTabs');
   let html = categories.map(c=>{
     const isActive = c.id === currentFilter;
-    const editBtn = currentUser.admin && !c.builtin ? `<button class="cat-edit" onclick="event.stopPropagation();openCatManage()" title="管理分类">
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-    </button>` : '';
+    const editBtn = currentUser.admin && !c.builtin ? `<button class="cat-edit" onclick="event.stopPropagation();openCatManage()" title="管理分类">✎</button>` : '';
     return `<button class="cat-tab ${isActive?'active':''}" onclick="filterCategory(this,'${c.id}')">${c.label}${editBtn}</button>`;
   }).join('');
   if(currentUser.admin){
@@ -963,7 +961,6 @@ function renderThreads(filter){
           <span class="${authorClass}">${u.name}${isAdmin(u)?' 👑':''}</span>
           <span class="thread-time">${t.time}</span>
           ${cat?`<span class="thread-tag ${cat.cls}">${cat.label}</span>`:''}
-          ${t.pinned?'<span class="thread-tag" style="background:rgba(253,203,110,.2);color:#e17055">置顶</span>':''}
         </div>
         <h3 class="thread-title"><a href="#">${t.title}</a></h3>
         <p class="thread-excerpt">${t.excerpt}</p>
@@ -984,12 +981,8 @@ function renderThreads(filter){
       </div>
       ${canDelete||canEdit?`
       <div class="thread-actions">
-        ${canEdit?`<button class="thread-action-btn edit" onclick="editThread(${t.id})" title="编辑帖子">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-        </button>`:''}
-        ${canDelete?`<button class="thread-action-btn delete" onclick="deleteThread(${t.id})" title="删除帖子">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-        </button>`:''}
+        ${canEdit?`<button class="thread-action-btn edit" onclick="editThread(${t.id})" title="编辑帖子">✎</button>`:''}
+        ${canDelete?`<button class="thread-action-btn delete" onclick="deleteThread(${t.id})" title="删除帖子">🗑</button>`:''}
       </div>`:''}
     </article>`;
   }).join('');
@@ -998,331 +991,235 @@ function renderThreads(filter){
 
 function renderOnlineUsers(){
   const container = document.getElementById('onlineUsers');
-  const allUsers = [currentUser, ...otherUsers.slice(0,7)];
-  container.innerHTML = allUsers.map(u => getOnlineAvatarHTML(u)).join('');
+  let html = getOnlineAvatarHTML(currentUser);
+  otherUsers.slice(0, 11).forEach(u => {
+    html += getOnlineAvatarHTML(u);
+  });
+  container.innerHTML = html;
 }
 
+function renderColorPicker(){
+  const container = document.getElementById('colorPicker');
+  container.innerHTML = avatarColors.map((color, i) => {
+    const isActive = i === selectedColor ? 'active' : '';
+    return `<div class="color-option ${isActive}" style="background:${color}" onclick="selectedColor=${i};renderColorPicker()"></div>`;
+  }).join('');
+}
+
+// ===== UPDATE UI =====
 function updateMyAvatar(){
   const btn = document.getElementById('myAvatarBtn');
+  const profile = document.getElementById('profileAvatarUpload');
   if(currentUser.avatar){
     btn.innerHTML = `<img src="${currentUser.avatar}" alt="${currentUser.name}">`;
-    btn.style.background = 'transparent';
+    profile.classList.add('has-image');
+    document.getElementById('profileAvatarImg').src = currentUser.avatar;
   } else {
     btn.style.background = avatarColors[currentUser.g];
     btn.textContent = currentUser.initial;
+    profile.style.background = avatarColors[currentUser.g];
   }
+  document.getElementById('profileName').value = currentUser.name;
 }
 
 function updateCategorySelect(){
-  const sel = document.getElementById('newCategory');
-  const nonAll = categories.filter(c=>!c.builtin);
-  sel.innerHTML = nonAll.map(c=>`<option value="${c.id}">${c.label}</option>`).join('');
+  const select = document.getElementById('newCategory');
+  select.innerHTML = categories.filter(c => c.id !== 'all').map(c => `<option value="${c.id}">${c.label}</option>`).join('');
 }
 
-// ===== INTERACTIONS =====
-function filterCategory(btn,cat){
-  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  currentFilter = cat;
-  renderThreads();
-}
-
+// ===== MODAL FUNCTIONS =====
 function openModal(){
-  updateCategorySelect();
-  editingThreadId = null;
-  document.getElementById('modalTitle').textContent = '发布新帖子';
-  document.getElementById('modalSubmitBtn').textContent = '发布';
-  document.getElementById('modalSubmitBtn').onclick = submitThread;
-  document.getElementById('newTitle').value = '';
-  document.getElementById('newContent').value = '';
+  if(!currentUser.name) {
+    showToast('请先完成个人资料设置');
+    return;
+  }
   document.getElementById('modalOverlay').classList.add('active');
-  document.body.style.overflow='hidden';
 }
 
 function closeModal(e){
   if(e && e.target !== e.currentTarget) return;
   document.getElementById('modalOverlay').classList.remove('active');
-  document.body.style.overflow='';
-  editingThreadId = null;
+  document.getElementById('newTitle').value = '';
+  document.getElementById('newContent').value = '';
 }
 
+function openProfile(){
+  document.getElementById('profileOverlay').classList.add('active');
+}
+
+function closeProfile(e){
+  if(e && e.target !== e.currentTarget) return;
+  document.getElementById('profileOverlay').classList.remove('active');
+}
+
+function openCatManage(){
+  if(!currentUser.admin) return;
+  const container = document.getElementById('catManageList');
+  container.innerHTML = categories.filter(c => !c.builtin).map(c => {
+    const styleClass = categoryStyles[(categories.indexOf(c) - 1) % categoryStyles.length];
+    return `
+    <div class="cat-manage-item">
+      <input type="text" value="${c.label}" onchange="categories[${categories.indexOf(c)}].label=this.value">
+      <span class="tag-preview ${styleClass}">${c.label}</span>
+      <button class="cat-manage-btn del" onclick="deleteCategory(${categories.indexOf(c)})">✕</button>
+    </div>
+    `;
+  }).join('');
+  document.getElementById('catManageOverlay').classList.add('active');
+}
+
+function closeCatManage(e){
+  if(e && e.target !== e.currentTarget) return;
+  document.getElementById('catManageOverlay').classList.remove('active');
+}
+
+// ===== THREAD OPERATIONS =====
 function submitThread(){
   const title = document.getElementById('newTitle').value.trim();
   const content = document.getElementById('newContent').value.trim();
   const category = document.getElementById('newCategory').value;
-  if(!title){showToast('请输入帖子标题',true);return}
-  if(!content){showToast('请输入帖子内容',true);return}
-
-  threads.unshift({
-    id: Date.now(),
+  if(!title || !content) {
+    showToast('标题和内容不能为空', true);
+    return;
+  }
+  const newThread = {
+    id: Math.max(...threads.map(t => t.id)) + 1,
     user: 0,
     category,
     title,
-    excerpt: content.substring(0,120) + (content.length>120?'...':''),
-    time:'刚刚',
-    replies:0,
-    likes:0,
-    views:1,
-  });
-
-  closeModal();
-  renderThreads();
-  showToast('帖子发布成功！');
-}
-
-// ===== EDIT THREAD =====
-function editThread(id){
-  const t = threads.find(x=>x.id===id);
-  if(!t) return;
-  editingThreadId = id;
-  updateCategorySelect();
-  document.getElementById('newTitle').value = t.title;
-  document.getElementById('newContent').value = t.excerpt;
-  document.getElementById('newCategory').value = t.category;
-  document.getElementById('modalTitle').textContent = '编辑帖子';
-  document.getElementById('modalSubmitBtn').textContent = '保存';
-  document.getElementById('modalSubmitBtn').onclick = function(){
-    const title = document.getElementById('newTitle').value.trim();
-    const content = document.getElementById('newContent').value.trim();
-    const category = document.getElementById('newCategory').value;
-    if(!title){showToast('请输入帖子标题',true);return}
-    t.title = title;
-    t.excerpt = content.substring(0,120) + (content.length>120?'...':'');
-    t.category = category;
-    closeModal();
-    renderThreads();
-    showToast('帖子已更新！');
+    excerpt: content.substring(0, 80) + '...',
+    replies: 0,
+    likes: 0,
+    views: 0,
+    time: '刚刚'
   };
-  document.getElementById('modalOverlay').classList.add('active');
-  document.body.style.overflow='hidden';
+  threads.unshift(newThread);
+  renderThreads();
+  closeModal();
+  showToast('发帖成功！');
 }
 
-// ===== PROFILE =====
+function editThread(id){
+  editingThreadId = id;
+  const thread = threads.find(t => t.id === id);
+  if(!thread) return;
+  document.getElementById('modalTitle').textContent = '编辑帖子';
+  document.getElementById('newCategory').value = thread.category;
+  document.getElementById('newTitle').value = thread.title;
+  document.getElementById('newContent').value = thread.excerpt;
+  document.getElementById('modalSubmitBtn').onclick = function(){
+    thread.category = document.getElementById('newCategory').value;
+    thread.title = document.getElementById('newTitle').value;
+    thread.excerpt = document.getElementById('newContent').value;
+    renderThreads();
+    closeModal();
+    showToast('修改成功！');
+    document.getElementById('modalTitle').textContent = '发布新帖子';
+    document.getElementById('modalSubmitBtn').onclick = submitThread;
+  };
+  openModal();
+}
+
+function deleteThread(id){
+  deleteTargetId = id;
+  document.getElementById('confirmTitle').textContent = '确认删除';
+  document.getElementById('confirmText').textContent = '删除后无法恢复，确定要删除这篇帖子吗？';
+  document.getElementById('confirmIcon').className = 'confirm-icon';
+  const btn = document.getElementById('confirmBtn');
+  btn.textContent = '删除';
+  btn.className = 'btn-confirm-delete';
+  actionCallback = function(){
+    threads = threads.filter(t => t.id !== deleteTargetId);
+    renderThreads();
+    document.getElementById('confirmOverlay').classList.remove('active');
+    showToast('删除成功');
+  };
+  document.getElementById('confirmOverlay').classList.add('active');
+}
+
+function filterCategory(btn, category){
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderThreads(category);
+}
+
+// ===== PROFILE FUNCTIONS =====
 function handleProfileAvatar(e){
   const file = e.target.files[0];
   if(!file) return;
   const reader = new FileReader();
   reader.onload = function(ev){
     currentUser.avatar = ev.target.result;
-    const img = document.getElementById('profileAvatarImg');
-    img.src = ev.target.result;
+    document.getElementById('profileAvatarImg').src = ev.target.result;
     document.getElementById('profileAvatarUpload').classList.add('has-image');
+    updateMyAvatar();
   };
   reader.readAsDataURL(file);
 }
 
-function openProfile(){
-  document.getElementById('profileName').value = currentUser.name;
-  selectedColor = currentUser.g;
-  if(currentUser.avatar){
-    document.getElementById('profileAvatarImg').src = currentUser.avatar;
-    document.getElementById('profileAvatarUpload').classList.add('has-image');
-  } else {
-    document.getElementById('profileAvatarUpload').classList.remove('has-image');
-  }
-  renderColorPicker();
-  document.getElementById('profileOverlay').classList.add('active');
-  document.body.style.overflow='hidden';
-}
-
-function closeProfile(e){
-  if(e && e.target !== e.currentTarget) return;
-  document.getElementById('profileOverlay').classList.remove('active');
-  document.body.style.overflow='';
-}
-
-function renderColorPicker(){
-  const picker = document.getElementById('colorPicker');
-  picker.innerHTML = avatarColors.map((c,i)=>`
-    <div class="color-option ${i===selectedColor?'active':''}"
-         style="background:${c}"
-         onclick="selectColor(${i})"></div>
-  `).join('');
-}
-
-function selectColor(idx){
-  selectedColor = idx;
-  renderColorPicker();
-}
-
 function saveProfile(){
   const name = document.getElementById('profileName').value.trim();
-  if(!name){showToast('昵称不能为空',true);return}
-  const wasAdmin = currentUser.admin;
+  if(!name){
+    showToast('昵称不能为空', true);
+    return;
+  }
   currentUser.name = name;
   currentUser.initial = name.charAt(0);
   currentUser.g = selectedColor;
-  // 云亦 is always admin
-  if(name === '云亦'){
-    currentUser.admin = true;
-  }
-  document.getElementById('adminBadge').style.display = currentUser.admin ? 'inline-block' : 'none';
-  if(!wasAdmin && currentUser.admin) showToast('欢迎管理员 云亦！');
   updateMyAvatar();
   renderCategories();
   renderThreads();
   renderOnlineUsers();
   closeProfile();
-  showToast('个人资料已更新！');
+  showToast('个人资料已保存');
 }
 
-// ===== DELETE =====
-function deleteThread(id){
-  deleteTargetId = id;
-  document.getElementById('confirmTitle').textContent = '确认删除';
-  document.getElementById('confirmText').textContent = '删除后无法恢复，确定要删除这篇帖子吗？';
-  const icon = document.getElementById('confirmIcon');
-  icon.className = 'confirm-icon';
-  icon.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
-  const btn = document.getElementById('confirmBtn');
-  btn.textContent = '删除';
-  btn.className = 'btn-confirm-delete';
-
-  actionCallback = function(){
-    threads = threads.filter(t=>t.id !== deleteTargetId);
-    deleteTargetId = null;
-    document.getElementById('confirmOverlay').classList.remove('active');
-    renderThreads();
-    showToast('帖子已删除');
-  };
-  document.getElementById('confirmOverlay').classList.add('active');
+// ===== CATEGORY MANAGEMENT =====
+function addCategoryInline(){
+  const container = document.getElementById('catManageList');
+  const newCat = {id:`cat-${Date.now()}`,label:'新分类',cls:categoryStyles[Math.floor(Math.random()*categoryStyles.length)]};
+  categories.push(newCat);
+  container.innerHTML += `
+  <div class="cat-manage-item">
+    <input type="text" value="新分类" onchange="categories[${categories.length-1}].label=this.value">
+    <span class="tag-preview ${newCat.cls}">新分类</span>
+    <button class="cat-manage-btn del" onclick="deleteCategory(${categories.length-1})">✕</button>
+  </div>
+  `;
 }
 
-function cancelAction(){
-  deleteTargetId = null;
-  actionCallback = null;
-  document.getElementById('confirmOverlay').classList.remove('active');
+function deleteCategory(idx){
+  categories.splice(idx, 1);
+  rebuildCategoryMap();
+  openCatManage();
 }
 
+function saveCategories(){
+  rebuildCategoryMap();
+  renderCategories();
+  renderThreads();
+  updateCategorySelect();
+  closeCatManage();
+  showToast('分类已保存');
+}
+
+// ===== CONFIRM ACTIONS =====
 function confirmAction(){
   if(actionCallback) actionCallback();
 }
 
-// ===== CATEGORY MANAGEMENT =====
-let tempCategories = [];
-
-function openCatManage(){
-  tempCategories = JSON.parse(JSON.stringify(categories));
-  renderCatManageList();
-  document.getElementById('catManageOverlay').classList.add('active');
-  document.body.style.overflow='hidden';
+function cancelAction(){
+  document.getElementById('confirmOverlay').classList.remove('active');
+  actionCallback = null;
 }
-
-function closeCatManage(e){
-  if(e && e.target !== e.currentTarget) return;
-  document.getElementById('catManageOverlay').classList.remove('active');
-  document.body.style.overflow='';
-}
-
-function renderCatManageList(){
-  const list = document.getElementById('catManageList');
-  list.innerHTML = tempCategories.map((c,i)=>{
-    const isBuiltin = c.builtin;
-    return `
-    <div class="cat-manage-item">
-      <span class="tag-preview ${c.cls}">${c.label}</span>
-      <input type="text" value="${c.label}" ${isBuiltin?'readonly style="opacity:.5"':''}
-             onchange="tempCategories[${i}].label=this.value"
-             placeholder="分类名称">
-      ${!isBuiltin?`<button class="cat-manage-btn del" onclick="removeCatInline(${i})" title="删除">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-      </button>`:''}
-    </div>`;
-  }).join('');
-}
-
-function addCategoryInline(){
-  const id = 'custom_' + Date.now();
-  const cls = categoryStyles[tempCategories.length % categoryStyles.length];
-  tempCategories.push({id, label:'新分类', cls, builtin:false});
-  renderCatManageList();
-}
-
-function removeCatInline(idx){
-  const cat = tempCategories[idx];
-  if(cat.builtin) return;
-  tempCategories.splice(idx, 1);
-  renderCatManageList();
-}
-
-function saveCategories(){
-  for(const c of tempCategories){
-    if(!c.label.trim()){showToast('分类名称不能为空',true);return}
-  }
-  categories = tempCategories;
-  rebuildCategoryMap();
-  renderCategories();
-  updateCategorySelect();
-  closeCatManage();
-  showToast('分类已更新！');
-}
-
-// ===== SEARCH =====
-document.getElementById('searchInput').addEventListener('input',function(){
-  const q = this.value.toLowerCase().trim();
-  if(!q){renderThreads();return}
-  const list = document.getElementById('threadList');
-  const filtered = threads.filter(t=>{
-    const u = getUser(t.user);
-    return t.title.toLowerCase().includes(q) ||
-           t.excerpt.toLowerCase().includes(q) ||
-           u.name.toLowerCase().includes(q);
-  });
-  list.innerHTML = filtered.map((t,i)=>{
-    const u = getUser(t.user);
-    const cat = categoryMap[t.category];
-    const canDelete = currentUser.admin || t.user >= 0;
-    const canEdit = currentUser.admin || t.user >= 0;
-    const authorClass = isAdmin(u) ? 'thread-author admin' : 'thread-author';
-    return `
-    <article class="thread-card" style="animation-delay:${i*0.05}s">
-      ${getAvatarHTML(u)}
-      <div class="thread-body">
-        <div class="thread-meta">
-          <span class="${authorClass}">${u.name}${isAdmin(u)?' 👑':''}</span>
-          <span class="thread-time">${t.time}</span>
-          ${cat?`<span class="thread-tag ${cat.cls}">${cat.label}</span>`:''}
-        </div>
-        <h3 class="thread-title"><a href="#">${t.title}</a></h3>
-        <p class="thread-excerpt">${t.excerpt}</p>
-        <div class="thread-footer">
-          <span class="thread-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>${t.replies}</span>
-          <span class="thread-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${t.likes}</span>
-          <span class="thread-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>${t.views}</span>
-        </div>
-      </div>
-      ${canDelete||canEdit?`<div class="thread-actions">
-        ${canEdit?`<button class="thread-action-btn edit" onclick="editThread(${t.id})" title="编辑帖子"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>`:''}
-        ${canDelete?`<button class="thread-action-btn delete" onclick="deleteThread(${t.id})" title="删除帖子"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>`:''}
-      </div>`:''}
-    </article>`;
-  }).join('');
-  if(!filtered.length) list.innerHTML='<div style="text-align:center;padding:48px;color:var(--text-muted)">没有找到相关帖子</div>';
-});
-
-// ===== PAGINATION =====
-document.querySelectorAll('.page-btn').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.page-btn').forEach(b=>b.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-
-// ===== KEYBOARD =====
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closeModal();closeProfile();cancelAction();closeCatManage()}
-  if(e.key==='n' && (e.ctrlKey||e.metaKey)){e.preventDefault();openModal()}
-});
 
 // ===== TOAST =====
-function showToast(msg, isError){
+function showToast(msg, isError = false){
   const toast = document.getElementById('toast');
   toast.textContent = msg;
-  toast.className = 'toast' + (isError?' error':'');
-  toast.classList.add('show');
-  setTimeout(()=>toast.classList.remove('show'),3000);
+  toast.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => toast.classList.remove('show'), 3000);
 }
 </script>
 </body>
 </html>
-
